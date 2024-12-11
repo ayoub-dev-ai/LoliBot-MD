@@ -92,6 +92,7 @@
 "url-regex-safe": "^3.0.0",
 "emoji-api": "^2.0.1",
 "translate-google-api": "^1.0.4",
+"undici":"*",
 "google-it": "^1.6.4",
 "yt-search": "^2.10.3",
 "openai": "^3.3.0",
