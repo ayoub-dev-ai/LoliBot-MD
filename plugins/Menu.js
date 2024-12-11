@@ -1,4 +1,4 @@
-import { generateWAMessageFromContent } from '@adiwajshing/baileys'
+import { generateWAMessageFromContent } from '@whiskeysockets/baileys'
 import os from 'os'
 import PhoneNumber from 'awesome-phonenumber'
 
@@ -147,7 +147,7 @@ let ppl = await( await conn.profilePictureUrl(m.sender, 'image').catch(() => 'ht
  //let fkon = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
 //let fotonya = 'https://telegra.ph/file/d43f196dc3417ca4c5338.jpg'
 // conn.sendMessage(m.chat, { image: { url: fotonya  }, caption: text.trim()}, { quoted: fkon })
-      await conn.sendMessage(m.chat, { text: text.trim(), contextInfo: { externalAdReply: { title: conn.user.name, body: '', thumbnailUrl: ppb, sourceUrl: "https://whatsapp.com/channel/0029Valkz9f2P59m5mtUqA1j", mediaType: 1, renderLargerThumbnail: true }}})
+      await conn.sendMessage(m.chat, { text: text.trim(), contextInfo: { externalAdReply: { title: conn.user.name, body: '', thumbnailUrl: ppb, sourceUrl: "https://wa.me/212691953970?text=.menu", mediaType: 1, renderLargerThumbnail: true }}})
   } catch (e) {
     m.reply('An error occurred')
     m.reply(e)
