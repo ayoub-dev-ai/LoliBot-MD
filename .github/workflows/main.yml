@@ -1,0 +1,149 @@
+name: The Bot Host
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: "*/30 * * * *"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Complete The Run 2
+        run: |
+          python3 - <<EOF
+          import requests
+          import time
+          def check_run_status(token, repo):
+              if not repo:
+                  print("Repository name is not provided or invalid.")
+                  return
+              headers = {
+                  'Authorization': f'token {token}',
+                  'Accept': 'application/vnd.github.v3+json',
+              }
+              url = f'https://api.github.com/repos/{repo}/actions/workflows'
+              response = requests.get(url, headers=headers)
+              if response.status_code == 200:
+                  workflows = response.json().get('workflows', [])
+                  if not workflows:
+                      print("No workflows found.")
+                      return
+                  for workflow in workflows:
+                      workflow_id = workflow['id']
+                      runs_url = f'https://api.github.com/repos/{repo}/actions/workflows/{workflow_id}/runs'
+                      runs_response = requests.get(runs_url, headers=headers)
+                      if runs_response.status_code == 200:
+                          runs = runs_response.json().get('workflow_runs', [])
+                          if not runs:
+                              print("No runs found for workflow ID:", workflow_id)
+                              continue
+                          if len(runs) >= 2:
+                              second_run = runs[1]
+                              run_id = second_run['id']
+                              GITHUB_RUN_ID = "${{ github.run_id }}"
+                              if str(run_id) == GITHUB_RUN_ID:
+                                  print(f'Run ID: {run_id} matches the specified ID. Stopping search.')
+                                  return
+                              status = second_run['status']
+                              conclusion = None
+                              while status == 'in_progress':
+                                  print(f'Run ID: {run_id} is still in progress. Checking again...')
+                                  time.sleep(10)
+                                  run_details_url = f'https://api.github.com/repos/{repo}/actions/runs/{run_id}'
+                                  run_details_response = requests.get(run_details_url, headers=headers)
+                                  if run_details_response.status_code == 200:
+                                      run_details = run_details_response.json()
+                                      status = run_details['status']
+                                      conclusion = run_details['conclusion']
+                                  else:
+                                      print(f'Failed to get run details for run ID: {run_id}, Status code: {run_details_response.status_code}')
+                                      break
+                              print(f'Run ID: {run_id} has completed. Final status: {status}, Conclusion: {conclusion}')
+                              return
+                          else:
+                              print('Less than 2 runs found. Stopping search.')
+                              return
+                      else:
+                          print(f'Failed to get runs for workflow ID: {workflow_id}, Status code: {runs_response.status_code}')
+                          return
+              else:
+                  print(f'Failed to fetch workflows. Status code: {response.status_code}')
+          repo = "${{ github.repository }}"
+          token = "${{ secrets.GITHUB_TOKEN }}"
+          if token:
+              check_run_status(token, repo)
+          else:
+              print("Failed to retrieve token")
+          EOF
+      
+      - name: check change 
+        run: sleep 5
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Fetch latest changes
+        run: git pull origin ${{ github.head_ref }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: mkdir tmp && rm -rf pakcage-lock.json && npm i
+
+      - name: TErM
+        run: export TERM=xterm
+      
+      - name: Start The Code
+        run: node index.js &
+
+      - name: keep alive
+        id: check_runs
+        run: |
+          echo "has_new_run=false" >> $GITHUB_OUTPUT
+          while true; do
+            sleep 1
+            latest_run=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/runs?per_page=1&status=queued&status=in_progress" | \
+              jq -r '.workflow_runs[0].id')
+            if [[ $latest_run != ${{ github.run_id }} ]]; then
+              echo "has_new_run=true" >> $GITHUB_OUTPUT
+              break
+            fi
+          done
+          
+      - name: delete the cache and Commit the logs
+        run: |
+          rm -rf tmp
+          mkdir tmp
+          rm -rf node_modules
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'action@github.com'
+          git add -A
+          git diff-index --quiet HEAD || (git commit -a -m "out session update" --allow-empty)
+          
+      
+      - name: pull
+        run: |
+          git pull origin main --rebase
+          git push origin main
+      
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+      
+      - name: Stop workflow
+        if: steps.check_runs.outputs.has_new_run == 'true'
+        run: exit 0
+
+      - name: keep
+        if: steps.check_runs.outputs.has_new_run == 'false'
+        run: sleep 60
