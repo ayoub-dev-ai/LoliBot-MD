@@ -1,4 +1,4 @@
-import { getBinaryNodeChildString } from "@adiwajshing/baileys";
+import { getBinaryNodeChildString } from "@whiskeysockets/baileys";
 import _0x29c085 from "node-fetch";
 const linkRegex = /https:\/\/whatsapp\.com\/channel\/([0-9A-Za-z]*)/i;
 const handler = async (_0x272819, {
