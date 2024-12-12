@@ -19,8 +19,8 @@ let rtotalreg = Object.values(global.db.data.users).filter(user => user.register
 let name2 = conn.getName(m.sender)
 
 if (command == 'verify' || command == 'reg' || command == 'verificar') {
-if (user.registered === true) throw `*Ya estás registrado 🤨*`
-if (!Reg.test(text)) throw `*⚠️ ¿No sabes cómo usar este comando?* Sigue estos pasos:\n\n• Unirte al grupo:\n${nn}\n• Después usa el comando de la siguiente manera: *${usedPrefix + command} nombre.edad*\n*• Ejemplo:* ${usedPrefix + command} ${name2}.16`
+if (user.registered === true) throw `*انت مسجل بالفعل🤨*`
+if (!Reg.test(text)) throw `*⚠️ ¿تريد التسجيل؟?* :\n\n• :\n${nn}\n• استعمل الامر: *${usedPrefix + command} الاسم.العمر*\n*• مثال:* ${usedPrefix + command} ${name2}.16`
   
 /*let groupID = '120363043118239234@g.us'; 
 let groupMetadata = await conn.groupMetadata(groupID);
