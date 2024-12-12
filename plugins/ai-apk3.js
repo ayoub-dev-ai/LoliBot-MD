@@ -38,12 +38,11 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   }
 };
 
-handler.command = /^(apk3)$/i;
+handler.command = /^(apk)$/i;
 handler.help = ['apk'];
 handler.tags = ['applications'];
-handler.premium = false;
-handler.limit = 5
-handler.rigister = true;
+handler.premium = true;
+handler.register = true;
 
 export default handler;
 
