@@ -93,7 +93,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 34,
+      "exp": 42,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -521,7 +521,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 1107,
+      "exp": 1263,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -856,7 +856,7 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "spam": 1734019824637
+      "spam": 1734021496031
     },
     "212691953970@s.whatsapp.net": {
       "afk": -1,
@@ -3828,10 +3828,10 @@
   },
   "stats": {
     "Menu.js": {
-      "total": 13,
-      "success": 13,
-      "last": 1734019825842,
-      "lastSuccess": 1734019825842
+      "total": 18,
+      "success": 18,
+      "last": 1734021480604,
+      "lastSuccess": 1734021480604
     },
     "Jeen-ai.js": {
       "total": 4,
@@ -3840,10 +3840,10 @@
       "lastSuccess": 1734019504367
     },
     "edit.js": {
-      "total": 4,
-      "success": 4,
-      "last": 1734019197793,
-      "lastSuccess": 1734019197793
+      "total": 6,
+      "success": 5,
+      "last": 1734021498836,
+      "lastSuccess": 1734021498836
     },
     "ytv.js": {
       "total": 3,
@@ -3852,10 +3852,10 @@
       "lastSuccess": 1734019126342
     },
     "simsimi.js": {
-      "total": 5,
-      "success": 1,
-      "last": 1734019475896,
-      "lastSuccess": 1734019136286
+      "total": 6,
+      "success": 2,
+      "last": 1734021441087,
+      "lastSuccess": 1734021441087
     },
     "copilot.js": {
       "total": 4,
