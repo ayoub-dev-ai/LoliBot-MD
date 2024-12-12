@@ -521,7 +521,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 1263,
+      "exp": 1330,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -856,7 +856,7 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "spam": 1734021496031
+      "spam": 1734021755183
     },
     "212691953970@s.whatsapp.net": {
       "afk": -1,
@@ -3828,10 +3828,10 @@
   },
   "stats": {
     "Menu.js": {
-      "total": 18,
-      "success": 18,
-      "last": 1734021480604,
-      "lastSuccess": 1734021480604
+      "total": 20,
+      "success": 20,
+      "last": 1734021755352,
+      "lastSuccess": 1734021755352
     },
     "Jeen-ai.js": {
       "total": 4,
