@@ -93,7 +93,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 2488,
+      "exp": 2604,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -428,7 +428,7 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "spam": 1734039655352
+      "spam": 1734041580583
     },
     "120363301598733462@newsletter": {
       "afk": -1,
@@ -926,7 +926,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 11,
+      "exp": 33,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -1486,10 +1486,10 @@
   },
   "stats": {
     "Menu.js": {
-      "total": 4,
-      "success": 4,
-      "last": 1734039578662,
-      "lastSuccess": 1734039578662
+      "total": 5,
+      "success": 5,
+      "last": 1734040282887,
+      "lastSuccess": 1734040282887
     },
     "_config-make-account.js": {
       "total": 7,
@@ -1498,10 +1498,10 @@
       "lastSuccess": 1734037223565
     },
     "ytv.js": {
-      "total": 2,
-      "success": 0,
-      "last": 1734037891901,
-      "lastSuccess": 0
+      "total": 4,
+      "success": 2,
+      "last": 1734040364472,
+      "lastSuccess": 1734040364472
     },
     "ai-apk3.js": {
       "total": 3,
@@ -1520,6 +1520,24 @@
       "success": 1,
       "last": 1734039656473,
       "lastSuccess": 1734039656473
+    },
+    "_config-ping.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1734040295756,
+      "lastSuccess": 1734040295756
+    },
+    "config-off-on.js": {
+      "total": 3,
+      "success": 0,
+      "last": 1734041580584,
+      "lastSuccess": 0
+    },
+    "shazam.js": {
+      "total": 2,
+      "success": 0,
+      "last": 1734040382641,
+      "lastSuccess": 0
     }
   },
   "msgs": {},
