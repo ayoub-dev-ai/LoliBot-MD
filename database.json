@@ -93,7 +93,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 328,
+      "exp": 2488,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -204,7 +204,7 @@
       "lastbunga": 0,
       "lastbunuhi": 0,
       "lastcoins": 0,
-      "lastclaim": 0,
+      "lastclaim": 1734039614875,
       "lastcode": 0,
       "lastcofre": 0,
       "lastcrusade": 0,
@@ -262,7 +262,7 @@
       "lelebakar": 0,
       "leleg": 0,
       "level": 0,
-      "limit": 10,
+      "limit": 110,
       "limitjoinfree": 1,
       "lion": 0,
       "lionexp": 0,
@@ -428,7 +428,7 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "spam": 1734037971472
+      "spam": 1734039655352
     },
     "120363301598733462@newsletter": {
       "afk": -1,
@@ -926,7 +926,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 8,
+      "exp": 11,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -1438,19 +1438,63 @@
         "inicio": "00:00",
         "fin": "23:59"
       }
+    },
+    "212671648947@s.whatsapp.net": {
+      "isBanned": false,
+      "welcome": true,
+      "detect": true,
+      "sWelcome": "",
+      "sBye": "",
+      "sPromote": "",
+      "sDemote": "",
+      "sCondition": "[{\"grupo\":{\"usuario\":[],\"condicion\":[],\"admin\":\"\"},\"prefijos\":[]}]",
+      "delete": false,
+      "modohorny": true,
+      "stickers": false,
+      "autosticker": false,
+      "audios": false,
+      "antiver": false,
+      "antiPorn": true,
+      "antiLink": false,
+      "antiLink2": false,
+      "antiTiktok": false,
+      "antiYoutube": false,
+      "antiTelegram": false,
+      "antiFacebook": false,
+      "antiInstagram": false,
+      "antiTwitter": false,
+      "antiDiscord": false,
+      "antiThreads": false,
+      "antiTwitch": false,
+      "antifake": false,
+      "reaction": true,
+      "viewonce": true,
+      "modoadmin": false,
+      "antitoxic": false,
+      "game": true,
+      "game2": false,
+      "simi": false,
+      "antiTraba": true,
+      "autorespond": true,
+      "autolevelup": true,
+      "expired": 0,
+      "horarioNsfw": {
+        "inicio": "00:00",
+        "fin": "23:59"
+      }
     }
   },
   "stats": {
     "Menu.js": {
-      "total": 3,
-      "success": 3,
-      "last": 1734037896766,
-      "lastSuccess": 1734037896766
+      "total": 4,
+      "success": 4,
+      "last": 1734039578662,
+      "lastSuccess": 1734039578662
     },
     "_config-make-account.js": {
-      "total": 6,
+      "total": 7,
       "success": 1,
-      "last": 1734037309334,
+      "last": 1734039655409,
       "lastSuccess": 1734037223565
     },
     "ytv.js": {
@@ -1460,10 +1504,22 @@
       "lastSuccess": 0
     },
     "ai-apk3.js": {
-      "total": 2,
+      "total": 3,
       "success": 0,
-      "last": 1734037971472,
+      "last": 1734039587917,
       "lastSuccess": 0
+    },
+    "_config-gift.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1734039614875,
+      "lastSuccess": 1734039614875
+    },
+    "pinter.js": {
+      "total": 3,
+      "success": 1,
+      "last": 1734039656473,
+      "lastSuccess": 1734039656473
     }
   },
   "msgs": {},
