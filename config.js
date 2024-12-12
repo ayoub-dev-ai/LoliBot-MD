@@ -75,6 +75,7 @@ global.author = 'Jeen-MD'
 
 //------------[ Versión | Nombre | cuentas ]------------
 
+global.wm = 'ᴊᴇᴇɴ-ʙᴏᴛ'
 global.botname = 'ᴊᴇᴇɴ-ʙᴏᴛ' 
 global.botname = 'ᴊᴇᴇɴ-ᴍᴅ'
 global.vs = '1.9.5'
