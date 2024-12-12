@@ -93,7 +93,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 2660,
+      "exp": 2733,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -261,7 +261,7 @@
       "leleb": 0,
       "lelebakar": 0,
       "leleg": 0,
-      "level": 0,
+      "level": 1,
       "limit": 110,
       "limitjoinfree": 1,
       "lion": 0,
@@ -428,7 +428,7 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "spam": 1734041580583
+      "spam": 1734042563698
     },
     "120363301598733462@newsletter": {
       "afk": -1,
@@ -926,7 +926,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 38,
+      "exp": 56,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -1354,7 +1354,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 86,
+      "exp": 124,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -1664,7 +1664,7 @@
       "wolflastfeed": 0,
       "wood": 0,
       "wortel": 0,
-      "spam": 1734042104832,
+      "spam": 1734042516360,
       "premiumDate": -1,
       "juegos": 0,
       "crime": 0,
@@ -1916,10 +1916,10 @@
   },
   "stats": {
     "Menu.js": {
-      "total": 7,
-      "success": 7,
-      "last": 1734042100162,
-      "lastSuccess": 1734042100162
+      "total": 9,
+      "success": 9,
+      "last": 1734042564346,
+      "lastSuccess": 1734042564346
     },
     "_config-make-account.js": {
       "total": 7,
