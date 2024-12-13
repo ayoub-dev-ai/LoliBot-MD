@@ -93,7 +93,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 6805,
+      "exp": 6861,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -428,7 +428,7 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "spam": 1734124405139
+      "spam": 1734125551359
     },
     "120363301598733462@newsletter": {
       "afk": -1,
@@ -9860,7 +9860,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 2623,
+      "exp": 2751,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -10719,7 +10719,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 85,
+      "exp": 91,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -11148,7 +11148,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 62,
+      "exp": 63,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -33602,7 +33602,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 91,
+      "exp": 115,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -33937,7 +33937,7 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "spam": 1734125292902
+      "spam": 1734125905493
     },
     "212775647317@s.whatsapp.net": {
       "afk": -1,
@@ -34436,7 +34436,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 8,
+      "exp": 14,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -34723,7 +34723,7 @@
       "sworddurability": 0,
       "tigame": 50,
       "tiketcoin": 0,
-      "title": "",
+      "title": 0,
       "tomat": 0,
       "tprem": 0,
       "trash": 0,
@@ -34746,7 +34746,32 @@
       "wolflastfeed": 0,
       "wood": 0,
       "wortel": 0,
-      "spam": 1734124712084
+      "spam": 1734124712084,
+      "premiumDate": -1,
+      "juegos": 0,
+      "crime": 0,
+      "catexp": 0,
+      "enchant": 0,
+      "glimit": 8,
+      "glory": 0,
+      "healthmonster": 0,
+      "kyubiexp": 0,
+      "kyubilastfeed": 0,
+      "lastbansos": 0,
+      "lastcodereg": 0,
+      "lastgift": 0,
+      "lastIstigfar": 0,
+      "lastrampok": 0,
+      "lastsda": 0,
+      "lastwar": 0,
+      "pancing": 0,
+      "pertambangan": 0,
+      "pertanian": 0,
+      "petFood": 0,
+      "psenjata": 0,
+      "psepick": 0,
+      "robo": 0,
+      "roboxp": 0
     },
     "212634949224@s.whatsapp.net": {
       "afk": -1,
@@ -39385,10 +39410,10 @@
   },
   "stats": {
     "Menu.js": {
-      "total": 94,
-      "success": 94,
-      "last": 1734125241699,
-      "lastSuccess": 1734125241699
+      "total": 95,
+      "success": 95,
+      "last": 1734125889214,
+      "lastSuccess": 1734125889214
     },
     "_config-make-account.js": {
       "total": 26,
@@ -39487,10 +39512,10 @@
       "lastSuccess": 1734113158390
     },
     "sf.js": {
-      "total": 13,
-      "success": 11,
-      "last": 1734124387681,
-      "lastSuccess": 1734124387681
+      "total": 14,
+      "success": 12,
+      "last": 1734125522918,
+      "lastSuccess": 1734125522918
     },
     "wm.js": {
       "total": 7,
@@ -39547,10 +39572,10 @@
       "lastSuccess": 1734124109155
     },
     "Jeen-ai.js": {
-      "total": 4,
-      "success": 0,
-      "last": 1734124170577,
-      "lastSuccess": 0
+      "total": 9,
+      "success": 1,
+      "last": 1734125905493,
+      "lastSuccess": 1734125525350
     },
     "jeen-ai.js": {
       "total": 4,
