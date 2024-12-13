@@ -1158,11 +1158,10 @@ if (typeof user.bannedMessageCount === 'undefined') {
   }
 if (user.bannedMessageCount < 3) {
 const messageNumber = user.bannedMessageCount + 1;
-const messageText = `⚠️ ESTAS BANEADO ⚠️\nAviso (${messageNumber}/3)${user.bannedReason ? `\n*Motivo:* *${user.bannedReason}*` : ''}
-*👉🏻 Puedes contactar al propietario del Bot si crees que se trata de un error o para charlar sobre tu desbaneo*
+const messageText = `⚠️ تم حضرك من استعمال البوت⚠️\nAviso (${messageNumber}/3)${user.bannedReason ? `\n*السبب:* *${user.bannedReason}*` : ''}
+*👉🏻 يمكنك الاتصال بمالك البوت إذا كنت تعتقد أنه خطأ أو لمناقشة رفع الحظر*
 
-👉 wa.me/+57 314 7616444
-👉 ${fb}
+👉 wa.me/+212710723716
 `.trim();
 //m.reply(messageText);
 user.bannedMessageCount++;
@@ -1226,15 +1225,15 @@ continue
                 m.isCommand = true
                 let xp = 'exp' in plugin ? parseInt(plugin.exp) : 1 // Ganancia de XP por comando
                 if (xp > 9000)
-                    m.reply('chirrido -_-') // Hehehe
+                    m.reply('-_-') // Hehehe
                 else
 m.exp += xp
 if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-conn.sendMessage(m.chat, {text: `*⚠ 𝐒𝐮𝐬 𝐝𝐢𝐚𝐦𝐚𝐧𝐭𝐞 💎 𝐬𝐞 𝐡𝐚𝐧 𝐚𝐠𝐨𝐭𝐚𝐝𝐨 𝐩𝐮𝐞𝐝𝐞 𝐜𝐨𝐦𝐩𝐫𝐚𝐫 𝐦𝐚𝐬 𝐮𝐬𝐚𝐧𝐝𝐨 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨:* #buy`, contextInfo: {externalAdReply : {mediaUrl: null, mediaType: 1, description: null, "title": wm, body: '', previewType: 0, "thumbnail": img.getRandom(), sourceUrl: [nna, md, yt, nn, tiktok].getRandom()}}}, { quoted: m })         
+conn.sendMessage(m.chat, {text: `*⚠ تحتاج الى جواهر 💎 يمكنك شراء من:* #buy`, contextInfo: {externalAdReply : {mediaUrl: null, mediaType: 1, description: null, "title": wm, body: '', previewType: 0, "thumbnail": img.getRandom(), sourceUrl: [nna, md, yt, nn, tiktok].getRandom()}}}, { quoted: m })         
 continue
 }
 if (plugin.level > _user.level) {
-conn.sendMessage(m.chat, {text: `*⚠️𝐍𝐞𝐜𝐞𝐬𝐢𝐭𝐚 𝐞𝐥 𝐧𝐢𝐯𝐞𝐥 ${plugin.level} 𝐩𝐚𝐫𝐚 𝐩𝐨𝐝𝐞𝐫 𝐮𝐬𝐚𝐫 𝐞𝐬𝐭𝐞 𝐜𝐨𝐦𝐚𝐧𝐝𝐨, 𝐓𝐮 𝐧𝐢𝐯𝐞𝐥 𝐚𝐜𝐭𝐮𝐚𝐥 𝐞𝐬:* ${_user.level}`, contextInfo: {externalAdReply : {mediaUrl: null, mediaType: 1, description: null, "title": wm, body: '', previewType: 0, "thumbnail": img.getRandom(), sourceUrl: [nna, md, yt, nn, tiktok].getRandom()}}}, { quoted: m })         
+conn.sendMessage(m.chat, {text: `*⚠️ تحتاج الى رفع الفل ${plugin.level} عبر استعمال البوت:* ${_user.level}`, contextInfo: {externalAdReply : {mediaUrl: null, mediaType: 1, description: null, "title": wm, body: '', previewType: 0, "thumbnail": img.getRandom(), sourceUrl: [nna, md, yt, nn, tiktok].getRandom()}}}, { quoted: m })         
 continue // Si no se ha alcanzado el nivel
 }
 let extra = {match, usedPrefix, noPrefix, _args, args, command, text, conn: this, participants, groupMetadata, user, bot, isROwner, isOwner, isRAdmin, isAdmin,  isBotAdmin, isPrems, chatUpdate, __dirname: ___dirname, __filename }
@@ -1260,8 +1259,8 @@ await plugin.after.call(this, m, extra)
 } catch (e) {
 console.error(e)
 }}
-if (m.limit) m.reply(`*${+m.limit}* 𝘿𝙞𝙖𝙢𝙖𝙣𝙩𝙚 💎 𝙪𝙨𝙖𝙙𝙤𝙨`)
-if (m.money) m.reply(+m.money + ' 𝙇𝙤𝙡𝙞𝘾𝙤𝙞𝙣𝙨 𝙪𝙨𝙖𝙙𝙤𝙨') 
+if (m.limit) m.reply(`*${+m.limit}* تم استعمال 💎 جواهر`)
+if (m.money) m.reply(+m.money + ' تم استعمال') 
 }
 break
 }}} catch (e) {
@@ -1318,8 +1317,8 @@ if (opts['autoread']) await this.readMessages([m.key])
 if (settingsREAD.autoread2) await this.readMessages([m.key])  
 //if (settingsREAD.autoread2 == 'true') await this.readMessages([m.key])    
 	    
-if (!m.fromMem && m.text.match(/(@5492266466080|LoliBot|Botsito|Gata|:v)/gi)) {
-let emot = pickRandom(["😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾", "🤩", "😏", "😳", "🥵", "🤯", "😱", "😨", "🤫", "🥴", "🤧", "🤑", "🤠", "🤖", "🤝", "💪", "👑", "😚", "🐱", "🐈", "🐆", "🐅", "⚡️", "🌈", "☃️", "⛄️", "🌝", "🌛", "🌜", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💘", "💝", "💟", "🌝", "😎", "🔥", "🖕", "🐦"])
+if (!m.fromMem && m.text.match(/(bo|Abdo|Jeen|Ayoub|:v)/gi)) {
+let emot = pickRandom(["🇲🇦", "⚡", "✨", "⚡", "🇷🇺", "🏴", "🗿", "💫", "🌟", "🤩", "😏", "😳", "🥵", "🤯", "😱", "😨", "🤫", "🥴", "🤧", "🤑", "🤠", "🤖", "🤝", "💪", "👑", "🫠", "🐱", "🥹", "🐆", "🐅", "⚡️", "🪼", "☃️", "⛄️", "🌝", "🌛", "🌜", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💘", "💝", "💟", "🌝", "😎", "🔥", "😍", "🐦"])
 this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
 function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}}}
 
@@ -1456,18 +1455,18 @@ console.error(e)
 
 global.dfail = (type, m, conn, usedPrefix) => {
     let msg = {
-        rowner: '⚠️ Este comando es solo para mi propietario. ¡Lo siento, este es exclusivo! 🔒',
-        owner: '⚠️ Este comando es solo para mi propietario. ¡Lo siento, este es exclusivo! 🔒',
-        mods: '⚠️ Este comando solo lo puedo usar yo. ¡Privilegios de mod! 😘',
-        premium: '⚠️ Este comando es solo para usuarios Premium (VIP). ¡Ser VIP tiene sus beneficios! 🌟',
-        group: '⚠️ Pendejo este comando es solo para grupos.',
-        private: '⚠️ Vamos al privado, este comando solo funciona en el privado del bot. ¡Hablemos en privado! 🤫',
-        admin: '🤨 No eres admins. Solo los admins pueden usar este comando. ¡Necesito a los jefes aquí! 🛡️',
-        botAdmin: '⚠️ haz admin al Bot "YO" para poder usar este comando.',
-        unreg: '「NO ESTAS REGISTRADO」\n\nPA NO APARECES EN MI BASE DE DATOS ✋🥸🤚\n\nPara poder usarme escribe el siguente comando\n\nComando: #reg nombre.edad\nEjemplo: #reg elrebelde.21',
+        rowner: '⚠ هذا الامر غير مخصص لك 🔒',
+        owner: '⚠️ هذا الامر خاص ب صاحب البوت! 🔒',
+        mods: '⚠️ هذا لامر فقط ل المودز الخاص بالبوت! 🏴',
+        premium: '⚠️ يجب عليك الاشتراك في العضوية VIP للتمتع بجميع الخدمات! 🌟',
+        group: '⚠️ هذا الامر فقط للمجموعات.',
+        private: '⚠️ هذا الامر يستعمل فقط في الخاص 🤫',
+        admin: '🤨 هذا الامر فقط للمشرفين انت لست مشرفا 🛡️',
+        botAdmin: '⚠️ يجب على البوت ان يكون مشرفا.',
+        unreg: '「انت لست مسجلا」\n\n لا يمكنك استعمال البوت حتا تكون مسجلا ✋🥸🤚\n\nيمكنك التسجيل في البوت عبر الامر\n\nالامر: .reg الاسم.العمر\nمثال: .reg jeen.21',
         restrict: '[ 🔐 ] Este comando esta desactivado por mi jefe'
     }[type]
-    if (msg) return conn.sendMessage(m.chat, {text: msg, contextInfo: { mentionedJid: null, forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363355261011910@newsletter', serverMessageId: '', newsletterName: 'LoliBot ✨' }, externalAdReply : {mediaUrl: null, mediaType: 1, description: null, "title": `ℹ️𝐈𝐍𝐅𝐎 ℹ️`, body: wm, previewType: 0, "thumbnail": img.getRandom(), sourceUrl: [nna, nna2, md, yt, nn, tiktok].getRandom()}}}, { quoted: m })
+    if (msg) return conn.sendMessage(m.chat, {text: msg, contextInfo: { mentionedJid: null, forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363372688988248@newsletter', serverMessageId: '', newsletterName: 'Ayoub dev ✨' }, externalAdReply : {mediaUrl: null, mediaType: 1, description: null, "title": `ℹ️معلوماتℹ️`, body: wm, previewType: 0, "thumbnail": img.getRandom(), sourceUrl: [nna, nna2, md, yt, nn, tiktok].getRandom()}}}, { quoted: m })
 }
 
 const file = global.__filename(import.meta.url, true);
