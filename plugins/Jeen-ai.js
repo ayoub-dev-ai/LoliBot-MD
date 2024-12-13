@@ -16,7 +16,7 @@ const handler = async (m, { text, usedPrefix, command, conn }) => {
     }
 
     // Ajustamos el prompt para Admin-TK con personalidad única
-    let prompt = `Your name is jeen and your creators is ayoub dev and abdo tech and you are muslim.`;
+    let prompt = `Your name is jeen and your creators is abdo tech and ayoub dev and you are muslim.`;
 
     // Making the API request using the new endpoint
     let response = await fetch(
