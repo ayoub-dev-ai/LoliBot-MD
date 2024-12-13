@@ -93,7 +93,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 5560,
+      "exp": 5813,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -261,8 +261,8 @@
       "leleb": 0,
       "lelebakar": 0,
       "leleg": 0,
-      "level": 1,
-      "limit": null,
+      "level": 2,
+      "limit": 8,
       "limitjoinfree": 1,
       "lion": 0,
       "lionexp": 0,
@@ -428,7 +428,7 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "spam": 1734099650819
+      "spam": 1734103084606
     },
     "120363301598733462@newsletter": {
       "afk": -1,
@@ -951,7 +951,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 250,
+      "exp": 265,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -1379,7 +1379,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 330,
+      "exp": 4.849202101102029e+22,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -1809,7 +1809,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 111,
+      "exp": 3.839202020101029e+130,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -1977,7 +1977,7 @@
       "leleb": 0,
       "lelebakar": 0,
       "leleg": 0,
-      "level": 0,
+      "level": 48372,
       "limit": 8,
       "limitjoinfree": 1,
       "lion": 0,
@@ -2144,7 +2144,7 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "spam": 1734097663028
+      "spam": 1734102724692
     },
     "120363374372683775@newsletter": {
       "afk": -1,
@@ -2667,7 +2667,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 16,
+      "exp": 21,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -7763,7 +7763,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 691,
+      "exp": 761,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -9392,10 +9392,10 @@
       "lastSuccess": 1734042093166
     },
     "_config-top-members.js": {
-      "total": 4,
-      "success": 4,
-      "last": 1734098877090,
-      "lastSuccess": 1734098877090
+      "total": 7,
+      "success": 7,
+      "last": 1734103071948,
+      "lastSuccess": 1734103071948
     },
     "tts.js": {
       "total": 2,
@@ -9452,10 +9452,16 @@
       "lastSuccess": 1734096206193
     },
     "__config-autolevelup.js": {
-      "total": 11,
-      "success": 10,
-      "last": 1734098704323,
-      "lastSuccess": 1734098704323
+      "total": 18,
+      "success": 17,
+      "last": 1734103086905,
+      "lastSuccess": 1734103086905
+    },
+    "_config-addxp.js": {
+      "total": 7,
+      "success": 5,
+      "last": 1734103068994,
+      "lastSuccess": 1734103068994
     }
   },
   "msgs": {},
