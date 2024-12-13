@@ -93,7 +93,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 4213,
+      "exp": 4319,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -428,7 +428,7 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "spam": 1734094214264
+      "spam": 1734095707883
     },
     "120363301598733462@newsletter": {
       "afk": -1,
@@ -951,7 +951,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 200,
+      "exp": 203,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -7762,7 +7762,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 98,
+      "exp": 119,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -8907,9 +8907,9 @@
       "lastSuccess": 1734081792802
     },
     "ytv.js": {
-      "total": 25,
+      "total": 28,
       "success": 10,
-      "last": 1734094246026,
+      "last": 1734095679350,
       "lastSuccess": 1734083389296
     },
     "ai-apk3.js": {
@@ -9001,6 +9001,12 @@
       "success": 2,
       "last": 1734083105819,
       "lastSuccess": 1734083105819
+    },
+    "wm.js": {
+      "total": 3,
+      "success": 1,
+      "last": 1734095708218,
+      "lastSuccess": 1734095708218
     }
   },
   "msgs": {},
