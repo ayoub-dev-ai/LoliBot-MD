@@ -1161,7 +1161,7 @@ const messageNumber = user.bannedMessageCount + 1;
 const messageText = `⚠️ تم حضرك من استعمال البوت⚠️\nAviso (${messageNumber}/3)${user.bannedReason ? `\n*السبب:* *${user.bannedReason}*` : ''}
 *👉🏻 يمكنك الاتصال بمالك البوت إذا كنت تعتقد أنه خطأ أو لمناقشة رفع الحظر*
 
-👉 wa.me/+212710723716
+👉 wa.me/+212641207087
 `.trim();
 //m.reply(messageText);
 user.bannedMessageCount++;
