@@ -2144,7 +2144,7 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "spam": 1734130712403
+      "spam": 1734131295143
     },
     "120363374372683775@newsletter": {
       "afk": -1,
@@ -9860,7 +9860,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 3298,
+      "exp": 3308,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -43649,10 +43649,10 @@
   },
   "stats": {
     "Menu.js": {
-      "total": 107,
-      "success": 107,
-      "last": 1734130584540,
-      "lastSuccess": 1734130584540
+      "total": 108,
+      "success": 108,
+      "last": 1734131295685,
+      "lastSuccess": 1734131295685
     },
     "_config-make-account.js": {
       "total": 27,
