@@ -93,7 +93,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 4319,
+      "exp": 4487,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -428,7 +428,7 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "spam": 1734095707883
+      "spam": 1734096205656
     },
     "120363301598733462@newsletter": {
       "afk": -1,
@@ -951,7 +951,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 203,
+      "exp": 211,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -1809,7 +1809,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 26,
+      "exp": 53,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -2144,7 +2144,7 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "spam": 1734044461741
+      "spam": 1734096116028
     },
     "120363374372683775@newsletter": {
       "afk": -1,
@@ -8895,15 +8895,15 @@
   },
   "stats": {
     "Menu.js": {
-      "total": 23,
-      "success": 23,
-      "last": 1734094204228,
-      "lastSuccess": 1734094204228
+      "total": 24,
+      "success": 24,
+      "last": 1734096117197,
+      "lastSuccess": 1734096117197
     },
     "_config-make-account.js": {
-      "total": 11,
+      "total": 12,
       "success": 2,
-      "last": 1734081792802,
+      "last": 1734096200327,
       "lastSuccess": 1734081792802
     },
     "ytv.js": {
@@ -9003,10 +9003,22 @@
       "lastSuccess": 1734083105819
     },
     "wm.js": {
-      "total": 3,
-      "success": 1,
-      "last": 1734095708218,
-      "lastSuccess": 1734095708218
+      "total": 6,
+      "success": 3,
+      "last": 1734096130519,
+      "lastSuccess": 1734096130519
+    },
+    "bingimg.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1734096189151,
+      "lastSuccess": 1734096189151
+    },
+    "_config-serie.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1734096206193,
+      "lastSuccess": 1734096206193
     }
   },
   "msgs": {},
