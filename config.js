@@ -79,46 +79,46 @@ global.wm = 'ᴊᴇᴇɴ-ʙᴏᴛ'
 global.botname = 'ᴊᴇᴇɴ-ʙᴏᴛ' 
 global.botname = 'ᴊᴇᴇɴ-ᴍᴅ'
 global.vs = '1.9.5'
-global.yt = 'https://www.youtube.com/@elrebelde.21'
-global.tiktok = 'tiktok.com/@elrebelde21'
-global.md = 'https://github.com/elrebelde21/LoliBot-MD'
-global.fb = 'https://www.facebook.com/elrebelde21'
-global.face = 'https://www.facebook.com/groups/872989990425789/'
+global.yt = 'https://whatsapp.com/channel/0029Valkz9f2P59m5mtUqA1j'
+global.tiktok = 'https://whatsapp.com/channel/0029VazoyzxGehEP23PoDP45'
+global.md = 'https://whatsapp.com/channel/0029Vb09v4M4inojHxaUYP0k'
+global.fb = 'https://whatsapp.com/channel/0029Valkz9f2P59m5mtUqA1j'
+global.face = 'https://whatsapp.com/channel/0029VazoyzxGehEP23PoDP45'
 
-global.nna = '' //Update
-global.nna2 = '' //LoliBot update
-global.nnaa = '' //LoliBot - Test
-global.nn = '' //Grupo 1
-global.nnn = '' //Grupo 2
-global.nnnt = '' //Grupo del Colaboracion
-global.nnnt2 = '' //  COL 2
-global.nnntt = '' //Grupo COL 3
-global.nnnttt = '' //enlace lolibot
-global.nnntttt = '' //Grupo ayuda sobre el bot
-global.bot = ''
+global.nna = 'https://whatsapp.com/channel/0029Vb09v4M4inojHxaUYP0k' //Update
+global.nna2 = 'https://whatsapp.com/channel/0029Valkz9f2P59m5mtUqA1j' //LoliBot update
+global.nnaa = 'https://whatsapp.com/channel/0029VazoyzxGehEP23PoDP45' //LoliBot - Test
+global.nn = 'https://whatsapp.com/channel/0029Vb09v4M4inojHxaUYP0k' //Grupo 1
+global.nnn = 'https://whatsapp.com/channel/0029Valkz9f2P59m5mtUqA1j' //Grupo 2
+global.nnnt = 'https://whatsapp.com/channel/0029VazoyzxGehEP23PoDP45' //Grupo del Colaboracion
+global.nnnt2 = 'https://whatsapp.com/channel/0029Vb09v4M4inojHxaUYP0k' //  COL 2
+global.nnntt = 'https://whatsapp.com/channel/0029Valkz9f2P59m5mtUqA1j' //Grupo COL 3
+global.nnnttt = 'https://whatsapp.com/channel/0029VazoyzxGehEP23PoDP45' //enlace lolibot
+global.nnntttt = 'https://whatsapp.com/channel/0029Vb09v4M4inojHxaUYP0k' //Grupo ayuda sobre el bot
+global.bot = 'https://whatsapp.com/channel/0029Valkz9f2P59m5mtUqA1j'
 global.asistencia = `${fb}`
 global.redes = [nna, nna2, yt, nn, md, tiktok, fb, nnn, face]
 
 //------------------------[ Info | Datos ]---------------------------
 
-global.wait = 'Calmao pa estoy procesando😎\n\n> *❗Por favor no hacer spam👏❗*'
+global.wait = 'الرجاء الانتظار لحظة\n\n> *Jeen-MD*'
 global.waitt = '*⌛ _ᴡᴀɪᴛ ᴘʟᴇᴀsᴇ..._ ▬▬▭▭▭*'
 global.waittt = '*⌛ _ᴡᴀɪᴛ ᴘʟᴇᴀsᴇ..._ ▬▬▬▬▭▭*'
 global.waitttt = '*⌛ _ᴡᴀɪᴛ ᴘʟᴇᴀsᴇ..._ ▬▬▬▬▬▬▭*'
 global.waittttt = '*⌛ _ᴡᴀɪᴛ ᴘʟᴇᴀsᴇ..._ ▬▬▬▬▬▬▬*'
-global.rg = '『✅ 𝙍𝙀𝙎𝙐𝙇𝙏𝘼𝘿𝙊𝙎 ✅』\n\n'
+global.rg = '『✅ النتائج ✅』\n\n'
 global.resultado = rg
-global.ag = '『⚠️ 𝘼𝘿𝙑𝙀𝙍𝙏𝙀𝙉𝘾𝙄𝘼 ⚠️』\n\n'
+global.ag = '『⚠️ ملاحظة ⚠️』\n\n'
 global.advertencia = ag
-global.iig = '『❕ 𝙄𝙉𝙁𝙊𝙍𝙈𝘼𝘾𝙄𝙊𝙉 』\n\n'
+global.iig = '『❕ معلومة 』\n\n'
 global.informacion = iig
-global.fg = '『❌ 𝙀𝙍𝙍𝙊𝙍 ❌』\n\n'
+global.fg = '『❌ خطا ❌』\n\n'
 global.fallo = fg
-global.mg = '『❗️ 𝙇𝙊 𝙐𝙎𝙊 𝙈𝘼𝙇❗』\n\n'
+global.mg = '『❗️ معلونة❗』\n\n'
 global.mal = mg
-global.eeg = '『📩 𝙍𝙀𝙋𝙊𝙍𝙏𝙀 📩』\n\n'
+global.eeg = '『📩 ابلاغ 📩』\n\n'
 global.envio = eeg
-global.eg = '『💚 𝙀𝙓𝙄𝙏𝙊𝙎 💚』\n\n'
+global.eg = '『💚 تم بنجاح 💚』\n\n'
 global.exito = eg
 
 //-------------------------[ IMAGEN ]------------------------------
@@ -131,12 +131,12 @@ global.imagen1 = fs.readFileSync('./media/Menu1.jpg')
 global.imagen2 = fs.readFileSync('./media/Menu2.jpg')
 global.imagen3 = fs.readFileSync('./media/Menu3.jpg')
 global.imagen4 = fs.readFileSync('./media/Menu4.jpg')
-global.imagen5 = 'https://qu.ax/rULv.jpg'
-global.imagen6 = 'https://qu.ax/CySs.jpg'
-global.menu18 = 'https://qu.ax/MOgO.jpg'
-global.vid1 = 'https://qu.ax/dcAc.mp4'
+global.imagen5 = 'https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg'
+global.imagen6 = 'https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg'
+global.menu18 = 'https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg'
+global.vid1 = 'https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg'
 global.img = [imagen, imagen1, imagen2, imagen3, imagen4]
-global.imageUrl = ["https://qu.ax/HJnWj.jpg", "https://qu.ax/ehPzQ.jpg", "https://qu.ax/ilfbC.jpg"]
+global.imageUrl = ["https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg", "https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg", "https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg"]
 
 //----------------------------[ NIVELES | RPG ]---------------------------------
 
