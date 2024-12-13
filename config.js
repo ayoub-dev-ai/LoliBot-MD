@@ -11,7 +11,7 @@ import moment from 'moment-timezone'
 
 global.owner = [['212710723716', 'Ayoub', true], ['212641207087']]
 global.mods = []
-global.prems = []
+global.prems = ['212671768179']
 
 //BETA: Si quiere evitar escribir el número que será bot en la consola, agregué desde aquí entonces:
 //Sólo aplica para opción 2 (ser bot con código de texto de 8 digitos)
