@@ -93,7 +93,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 2952,
+      "exp": 3083,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -428,7 +428,7 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "spam": 1734075539436
+      "spam": 1734075959268
     },
     "120363301598733462@newsletter": {
       "afk": -1,
@@ -951,7 +951,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 189,
+      "exp": 190,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -5188,7 +5188,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 40,
+      "exp": 111,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -5522,7 +5522,8 @@
       "psenjata": 0,
       "psepick": 0,
       "robo": 0,
-      "roboxp": 0
+      "roboxp": 0,
+      "spam": 1734076075960
     }
   },
   "chats": {
@@ -6057,10 +6058,10 @@
   },
   "stats": {
     "Menu.js": {
-      "total": 13,
-      "success": 13,
-      "last": 1734075473310,
-      "lastSuccess": 1734075473310
+      "total": 14,
+      "success": 14,
+      "last": 1734075961200,
+      "lastSuccess": 1734075961200
     },
     "_config-make-account.js": {
       "total": 8,
@@ -6075,10 +6076,10 @@
       "lastSuccess": 1734040364472
     },
     "ai-apk3.js": {
-      "total": 5,
-      "success": 2,
-      "last": 1734043514977,
-      "lastSuccess": 1734043514977
+      "total": 7,
+      "success": 4,
+      "last": 1734075934534,
+      "lastSuccess": 1734075934534
     },
     "_config-gift.js": {
       "total": 2,
@@ -6133,6 +6134,12 @@
       "success": 2,
       "last": 1734043483080,
       "lastSuccess": 1734043483080
+    },
+    "simsimi.js": {
+      "total": 3,
+      "success": 0,
+      "last": 1734076076884,
+      "lastSuccess": 0
     }
   },
   "msgs": {},
