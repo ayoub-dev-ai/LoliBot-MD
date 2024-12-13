@@ -4,7 +4,7 @@ import os from 'os'
 import axios from 'axios'
 
 const handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `Use example ${usedPrefix}${command} <search term>`;
+  if (!text) throw `مثال ${usedPrefix}${command} <الاسم>`;
 
   // Pencarian video berdasarkan query text
   const search = await yts(text);
@@ -18,8 +18,8 @@ const handler = async (m, { conn, command, text, usedPrefix }) => {
 
   try {
     // Mendapatkan URL audio menggunakan API ryzendesu
-    const response = await axios.get(`https://api.ryzendesu.vip/api/downloader/ytmp3?url=${encodeURIComponent(url)}`);
-    const downloadUrl = response.data.url;
+    const response = await axios.get(`https://bk9.fun/download/ytmp3?url=${encodeURIComponent(url)}`);
+    const downloadUrl = response.data.downloadUrl;
 
     if (!downloadUrl) throw new Error('Audio URL not found');
 
@@ -79,7 +79,7 @@ const handler = async (m, { conn, command, text, usedPrefix }) => {
   }
 };
 
-handler.help = ['play'].map((v) => v + ' <query>');
+handler.help = ['play'].map((v) => v + ' <اسم الاغنية>');
 handler.tags = ['downloader'];
 handler.command = /^(play)$/i;
 
