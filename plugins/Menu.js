@@ -13,9 +13,6 @@ const defaultMenu = {
 *_乂 Jeen MD - bot_*
 
 
-*_あ Library : [ jeen-Baileys ]_*
-*_あ Prefix : [ %_p ]_*
-*_あ Platform : [ jeen-hosting ]_*
 *_あ Uptime : [ %muptime ]_*
 *_あ Date : [ %date ]_*
 *_あ Database : [ %totalreg ]_*
@@ -128,7 +125,7 @@ let ppl = await( await conn.profilePictureUrl(m.sender, 'image').catch(() => 'ht
 
     let ppb = await( await conn.profilePictureUrl(conn.user.jid, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png'))
     
- await conn.relayMessage(m.chat, { reactionMessage: { key: m.key, text: '✅'  }}, { messageId: m.key.id })
+ await conn.relayMessage(m.chat, { reactionMessage: { key: m.key, text: '📚'  }}, { messageId: m.key.id })
 
 //Payment Menu
  /*await conn.relayMessage(m.chat,  {
