@@ -1,14 +1,14 @@
 import { addExif } from '../lib/sticker.js'
 
 let handler = async (m, { conn, text }) => {
-    if (!m.quoted) throw '👀┇المرجو الرد على الملصق واضافة اسم الحزمة والكاتب لستيكر الذي تريد سرقته او تعديله\nمثال : .wm jeen|jeen┇😎'
+    if (!m.quoted) throw '👀┇المرجو الرد على الملصق واضافة اسم الحزمة والكاتب لستيكر الذي تريد سرقته او تعديله\nمثال : .wm Jeen┇😎'
     let stiker = false
     try {
         let [packname, ...author] = text.split('|')
         author = (author || []).join('|')
         
         // Prepend "Jeen-md" to the packname
-        packname = "Jeen-md " + (packname || '')
+        packname = "Jeen-md | " + (packname || '')
         
         let mime = m.quoted.mimetype || ''
         if (!/webp/.test(mime)) throw '👀┇يا نجم، لازم ترد على استيكر عشان نضيف الاسم!┇😅'
