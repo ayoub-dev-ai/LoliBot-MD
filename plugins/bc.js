@@ -27,7 +27,7 @@ let handler = async (m, { conn, text }) => {
         
         try {
             await conn.sendMessage(id, { 
-                text: `JEEN-MD\n *https://whatsapp.com/channel/0029Valkz9f2P59m5mtUqA1j*\n┃ ⛥│${teks}\n┃ ⛥╰───────────\n╰━━━━━━━━━━━──⊷`,
+                text: `Edgar-MD\n *https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G*\n┃ ⛥│${teks}\n┃ ⛥╰───────────\n╰━━━━━━━━━━━──⊷`,
             }, { quoted: m });
 
             console.log(`✅ تم إرسال الرسالة إلى الدردشة رقم ${i + 1}/${targetChats.length} (ID: ${id})`);
