@@ -9,7 +9,7 @@ import moment from 'moment-timezone'
 
 //---------[ Añada los numeros a ser Propietario/a ]---------
 
-global.owner = [['212710723716', 'Ayoub', true], ['212641207087']]
+global.owner = [['212710723716', 'Ayoub', true], ['']]
 global.mods = []
 global.prems = ['212671768179']
 
@@ -70,32 +70,32 @@ global.moment = moment
 
 //------------------------[ Stickers ]-----------------------------
 
-global.packname = 'Jeen-MD'
-global.author = 'Jeen-MD'
+global.packname = 'Edgar-MD'
+global.author = 'Edgar-MD'
 
 //------------[ Versión | Nombre | cuentas ]------------
 
-global.wm = 'ᴊᴇᴇɴ-ʙᴏᴛ'
-global.botname = 'ᴊᴇᴇɴ-ʙᴏᴛ' 
-global.botname = 'ᴊᴇᴇɴ-ᴍᴅ'
+global.wm = 'ᴇᴅɢᴀʀ-ᴍᴅ'
+global.botname = 'ᴇᴅɢᴀʀ-ᴍᴅ' 
+global.botname = 'ᴇᴅɢᴀʀ-ᴍᴅ'
 global.vs = '1.9.5'
-global.yt = 'https://whatsapp.com/channel/0029Valkz9f2P59m5mtUqA1j'
-global.tiktok = 'https://whatsapp.com/channel/0029VazoyzxGehEP23PoDP45'
-global.md = 'https://whatsapp.com/channel/0029Vb09v4M4inojHxaUYP0k'
-global.fb = 'https://whatsapp.com/channel/0029Valkz9f2P59m5mtUqA1j'
-global.face = 'https://whatsapp.com/channel/0029VazoyzxGehEP23PoDP45'
+global.yt = 'https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G'
+global.tiktok = 'https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G'
+global.md = 'https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G'
+global.fb = 'https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G'
+global.face = 'https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G'
 
-global.nna = 'https://whatsapp.com/channel/0029Vb09v4M4inojHxaUYP0k' //Update
-global.nna2 = 'https://whatsapp.com/channel/0029Valkz9f2P59m5mtUqA1j' //LoliBot update
-global.nnaa = 'https://whatsapp.com/channel/0029VazoyzxGehEP23PoDP45' //LoliBot - Test
-global.nn = 'https://whatsapp.com/channel/0029Vb09v4M4inojHxaUYP0k' //Grupo 1
-global.nnn = 'https://whatsapp.com/channel/0029Valkz9f2P59m5mtUqA1j' //Grupo 2
-global.nnnt = 'https://whatsapp.com/channel/0029VazoyzxGehEP23PoDP45' //Grupo del Colaboracion
-global.nnnt2 = 'https://whatsapp.com/channel/0029Vb09v4M4inojHxaUYP0k' //  COL 2
-global.nnntt = 'https://whatsapp.com/channel/0029Valkz9f2P59m5mtUqA1j' //Grupo COL 3
-global.nnnttt = 'https://whatsapp.com/channel/0029VazoyzxGehEP23PoDP45' //enlace lolibot
-global.nnntttt = 'https://whatsapp.com/channel/0029Vb09v4M4inojHxaUYP0k' //Grupo ayuda sobre el bot
-global.bot = 'https://whatsapp.com/channel/0029Valkz9f2P59m5mtUqA1j'
+global.nna = 'https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G' //Update
+global.nna2 = 'https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G' //LoliBot update
+global.nnaa = 'https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G' //LoliBot - Test
+global.nn = 'https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G' //Grupo 1
+global.nnn = 'https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G' //Grupo 2
+global.nnnt = 'https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G' //Grupo del Colaboracion
+global.nnnt2 = 'https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G' //  COL 2
+global.nnntt = 'https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G' //Grupo COL 3
+global.nnnttt = 'https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G' //enlace lolibot
+global.nnntttt = 'https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G' //Grupo ayuda sobre el bot
+global.bot = 'https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G'
 global.asistencia = `${fb}`
 global.redes = [nna, nna2, yt, nn, md, tiktok, fb, nnn, face]
 
@@ -126,11 +126,11 @@ global.exito = eg
 global.img1 = 'https://qu.ax/Hvjxc.jpg'
 global.img2 = 'https://qu.ax/Hvjxc.jpg'
 
-global.imagen = fs.readFileSync('./Menu2.jpg')
-global.imagen1 = fs.readFileSync('./media/Menu1.jpg')
-global.imagen2 = fs.readFileSync('./media/Menu2.jpg')
-global.imagen3 = fs.readFileSync('./media/Menu3.jpg')
-global.imagen4 = fs.readFileSync('./media/Menu4.jpg')
+global.imagen =  'https://qu.ax/Hvjxc.jpg'
+global.imagen1 = 'https://qu.ax/Hvjxc.jpg'
+global.imagen2 = 'https://qu.ax/Hvjxc.jpg'
+global.imagen3 = 'https://qu.ax/Hvjxc.jpg'
+global.imagen4 = 'https://qu.ax/Hvjxc.jpg'
 global.imagen5 = 'https://qu.ax/Hvjxc.jpg'
 global.imagen6 = 'https://qu.ax/Hvjxc.jpg'
 global.menu18 = 'https://qu.ax/Hvjxc.jpg'
