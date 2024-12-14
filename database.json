@@ -1689,7 +1689,7 @@
       "wolflastfeed": 0,
       "wood": 0,
       "wortel": 0,
-      "spam": 1734216015019,
+      "spam": 1734216221381,
       "premiumDate": -1,
       "juegos": 0,
       "crime": 0,
@@ -3524,7 +3524,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 196,
+      "exp": 202,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -114671,10 +114671,10 @@
   },
   "stats": {
     "Menu.js": {
-      "total": 215,
-      "success": 215,
-      "last": 1734215988858,
-      "lastSuccess": 1734215988858
+      "total": 217,
+      "success": 217,
+      "last": 1734216222171,
+      "lastSuccess": 1734216222171
     },
     "_config-make-account.js": {
       "total": 53,
@@ -114689,10 +114689,10 @@
       "lastSuccess": 1734182473940
     },
     "ai-apk3.js": {
-      "total": 282,
-      "success": 269,
-      "last": 1734208011480,
-      "lastSuccess": 1734208011480
+      "total": 285,
+      "success": 272,
+      "last": 1734216210607,
+      "lastSuccess": 1734216210607
     },
     "_config-gift.js": {
       "total": 11,
