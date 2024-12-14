@@ -1,7 +1,7 @@
 // tokenUtils.js
 
 const generateToken = () => {
-  const prefix = 'jeen';
+  const prefix = 'edgar';
   const suffix = Math.random().toString(36).substr(2, 9);
   const token = `${prefix}-${suffix}`;
   return token;
@@ -12,7 +12,7 @@ const tokensDB = {}; // Temporary database for tokens
 const handler = async (m, { conn, command, text }) => {
   const sender = m.sender;
 
-  if (command === 'gett') {
+  if (command === 'active2') {
     // Command to generate a new token with a specified number of gems
     if (!text) {
       throw `*اكتب عدد الجواهر التي تريد تضمينها في التوكن مثل:*\n\n!gett 5`;
@@ -30,7 +30,7 @@ const handler = async (m, { conn, command, text }) => {
   } else if (command === 'claim') {
     // Command to claim gems using a token
     if (!text) {
-      await conn.sendMessage(m.chat, { text: `*يرجى إرسال التوكن للتحقق مثل:*\n\n!claim jeen-xxxxxxx` }, { quoted: m });
+      await conn.sendMessage(m.chat, { text: `*يرجى إرسال التوكن للتحقق مثل:*\n\n.claim Edgar-xxxxxxx` }, { quoted: m });
       return;
     }
 
@@ -61,10 +61,10 @@ const handler = async (m, { conn, command, text }) => {
     } catch (error) {
       throw `خطأ: ${error}`;
     }
-  } else if (command === 'deactivate') {
+  } else if (command === 'deactivate2') {
     // Command to deactivate a token
     if (!text) {
-      throw `*اكتب التوكن الذي تريد إلغاء تفعيله مثل:*\n\n!deactivate jeen-xxxxxxx`;
+      throw `*اكتب التوكن الذي تريد إلغاء تفعيله مثل:*\n\n!deactivate edgar-xxxxxxx`;
     }
 
     const token = text.trim();
@@ -78,7 +78,7 @@ const handler = async (m, { conn, command, text }) => {
     } catch (error) {
       throw `خطأ: ${error}`;
     }
-  } else if (command === 'reactivate') {
+  } else if (command === 'reactivate2') {
     // Command to reactivate a token
     if (!text) {
       throw `*اكتب التوكن الذي تريد إعادة تفعيله مثل:*\n\n!reactivate jeen-xxxxxxx`;
@@ -99,5 +99,6 @@ const handler = async (m, { conn, command, text }) => {
   }
 };
 
-handler.command = /^(gett|claim|deactivate|reactivate)$/i;
+handler.command = /^(active2|claim|deactivate2|reactivate2)$/i;
+handler.help = ['claim']
 export default handler;
