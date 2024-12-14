@@ -93,7 +93,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 7301,
+      "exp": 7349,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -428,7 +428,7 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "spam": 1734176827839
+      "spam": 1734177093258
     },
     "120363301598733462@newsletter": {
       "afk": -1,
@@ -9860,7 +9860,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 4941,
+      "exp": 4961,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -58260,7 +58260,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 16,
+      "exp": 51,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -58594,7 +58594,8 @@
       "psenjata": 0,
       "psepick": 0,
       "robo": 0,
-      "roboxp": 0
+      "roboxp": 0,
+      "spam": 1734177129446
     }
   },
   "chats": {
@@ -63943,10 +63944,10 @@
       "lastSuccess": 1734173501219
     },
     "ai-apk3.js": {
-      "total": 164,
-      "success": 152,
-      "last": 1734176939662,
-      "lastSuccess": 1734176939662
+      "total": 166,
+      "success": 154,
+      "last": 1734177129447,
+      "lastSuccess": 1734177129447
     },
     "_config-gift.js": {
       "total": 4,
@@ -64033,9 +64034,9 @@
       "lastSuccess": 1734175256330
     },
     "wm.js": {
-      "total": 7,
+      "total": 8,
       "success": 4,
-      "last": 1734098176606,
+      "last": 1734177085360,
       "lastSuccess": 1734098176606
     },
     "bingimg.js": {
@@ -64097,6 +64098,12 @@
       "success": 4,
       "last": 1734124405477,
       "lastSuccess": 1734124405477
+    },
+    "kora.js": {
+      "total": 3,
+      "success": 3,
+      "last": 1734177094254,
+      "lastSuccess": 1734177094254
     }
   },
   "msgs": {},
