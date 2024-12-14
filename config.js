@@ -123,20 +123,20 @@ global.exito = eg
 
 //-------------------------[ IMAGEN ]------------------------------
 //global.img = "https://qu.ax/Zgqq.jpg"
-global.img1 = 'https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg'
-global.img2 = 'https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg'
+global.img1 = 'https://qu.ax/Hvjxc.jpg'
+global.img2 = 'https://qu.ax/Hvjxc.jpg'
 
 global.imagen = fs.readFileSync('./Menu2.jpg')
 global.imagen1 = fs.readFileSync('./media/Menu1.jpg')
 global.imagen2 = fs.readFileSync('./media/Menu2.jpg')
 global.imagen3 = fs.readFileSync('./media/Menu3.jpg')
 global.imagen4 = fs.readFileSync('./media/Menu4.jpg')
-global.imagen5 = 'https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg'
-global.imagen6 = 'https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg'
-global.menu18 = 'https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg'
-global.vid1 = 'https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg'
+global.imagen5 = 'https://qu.ax/Hvjxc.jpg'
+global.imagen6 = 'https://qu.ax/Hvjxc.jpg'
+global.menu18 = 'https://qu.ax/Hvjxc.jpg'
+global.vid1 = 'https://qu.ax/Hvjxc.jpg'
 global.img = [imagen, imagen1, imagen2, imagen3, imagen4]
-global.imageUrl = ["https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg", "https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg", "https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg"]
+global.imageUrl = ["https://qu.ax/Hvjxc.jpg", "https://qu.ax/Hvjxc.jpg", "https://qu.ax/Hvjxc.jpg"]
 
 //----------------------------[ NIVELES | RPG ]---------------------------------
 
@@ -164,9 +164,9 @@ global.flaaa = [
 
 global.ch = {
 ch1: '120363372688988248@newsletter', 
-ch2: '120363355261011910@newsletter', 
+ch2: '120363372688988248@newsletter', 
 ch3: '120363372688988248@newsletter',
-ch4: '120363301598733462@newsletter',
+ch4: '120363372688988248@newsletter',
 ch5: '120363372688988248@newsletter', 
 }
 
