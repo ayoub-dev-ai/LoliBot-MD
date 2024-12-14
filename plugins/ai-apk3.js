@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 let handler = async (m, { conn, args, text, usedPrefix, command }) => {
-  if (!args[0]) throw '*Download applications with the additional obb file* \n\n Example :\n ' + usedPrefix + command + 'E football';
+  if (!args[0]) throw '*Download applications with the additional obb file* \n\n Example :\n ' + usedPrefix + command + ' free fire';
   let info = await apkinfo(text);
   let res = await apk(text);
 
@@ -38,12 +38,12 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   }
 };
 
-handler.command = /^(apk)$/i;
+handler.command = /^(apk3)$/i;
 handler.help = ['apk'];
 handler.tags = ['applications'];
 handler.premium = false;
-handler.limit = 20;
-handler.register = true;
+handler.limit = 5
+handler.rigister = true;
 
 export default handler;
 
