@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 let handler = async (m, { conn, args, text, usedPrefix, command }) => {
-  if (!args[0]) throw '*Download applications with the additional obb file* \n\n Example :\n ' + usedPrefix + command + ' free fire';
+  if (!args[0]) throw '*Download applications with the additional obb file* \n\n Example :\n ' + usedPrefix + command + 'E football';
   let info = await apkinfo(text);
   let res = await apk(text);
 
@@ -11,7 +11,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
   let message = await conn.sendMessage(m.chat, {
     image: { url: info.icon },
-    caption: `*App Name:* \n${info.name}\n*Package Name:* \n${info.packageN} \n\n> *JEEN-MD*`,
+    caption: `*App Name:* \n${info.name}\n*Package Name:* \n${info.packageN} \n\n> *Edgar-MD*`,
     footer: '_Apk files...',
   });
 
