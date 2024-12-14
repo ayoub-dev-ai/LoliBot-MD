@@ -1689,7 +1689,7 @@
       "wolflastfeed": 0,
       "wood": 0,
       "wortel": 0,
-      "spam": 1734218576024,
+      "spam": 1734218755918,
       "premiumDate": -1,
       "juegos": 0,
       "crime": 0,
@@ -36660,7 +36660,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 101,
+      "exp": 108,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -36970,7 +36970,7 @@
       "wolflastfeed": 0,
       "wood": 0,
       "wortel": 0,
-      "spam": 1734127910667,
+      "spam": 1734218846887,
       "premiumDate": -1,
       "juegos": 0,
       "crime": 0,
@@ -123498,14 +123498,58 @@
         "inicio": "00:00",
         "fin": "23:59"
       }
+    },
+    "212608740306@s.whatsapp.net": {
+      "isBanned": false,
+      "welcome": true,
+      "detect": true,
+      "sWelcome": "",
+      "sBye": "",
+      "sPromote": "",
+      "sDemote": "",
+      "sCondition": "[{\"grupo\":{\"usuario\":[],\"condicion\":[],\"admin\":\"\"},\"prefijos\":[]}]",
+      "delete": false,
+      "modohorny": true,
+      "stickers": false,
+      "autosticker": false,
+      "audios": false,
+      "antiver": false,
+      "antiPorn": true,
+      "antiLink": false,
+      "antiLink2": false,
+      "antiTiktok": false,
+      "antiYoutube": false,
+      "antiTelegram": false,
+      "antiFacebook": false,
+      "antiInstagram": false,
+      "antiTwitter": false,
+      "antiDiscord": false,
+      "antiThreads": false,
+      "antiTwitch": false,
+      "antifake": false,
+      "reaction": true,
+      "viewonce": true,
+      "modoadmin": false,
+      "antitoxic": false,
+      "game": true,
+      "game2": false,
+      "simi": false,
+      "antiTraba": true,
+      "autorespond": true,
+      "autolevelup": true,
+      "expired": 0,
+      "horarioNsfw": {
+        "inicio": "00:00",
+        "fin": "23:59"
+      }
     }
   },
   "stats": {
     "Menu.js": {
-      "total": 229,
-      "success": 229,
-      "last": 1734218576503,
-      "lastSuccess": 1734218576503
+      "total": 231,
+      "success": 231,
+      "last": 1734218847218,
+      "lastSuccess": 1734218847218
     },
     "_config-make-account.js": {
       "total": 53,
@@ -123664,10 +123708,10 @@
       "lastSuccess": 1734124109155
     },
     "Jeen-ai.js": {
-      "total": 45,
-      "success": 37,
-      "last": 1734218383119,
-      "lastSuccess": 1734218383119
+      "total": 47,
+      "success": 39,
+      "last": 1734218749371,
+      "lastSuccess": 1734218749371
     },
     "jeen-ai.js": {
       "total": 4,
@@ -123682,10 +123726,10 @@
       "lastSuccess": 1734178883805
     },
     "gemini.js": {
-      "total": 9,
-      "success": 9,
-      "last": 1734179562032,
-      "lastSuccess": 1734179562032
+      "total": 10,
+      "success": 10,
+      "last": 1734218756004,
+      "lastSuccess": 1734218756004
     },
     "txt2mok.js": {
       "total": 8,
