@@ -11,12 +11,12 @@ const handler = async (m, { text, usedPrefix, command, conn }) => {
 
     if (!text) {
       return m.reply(
-        "استعمل الامر!\n\n*.jeen ✧ مثال:* ماهي عاصمة المغرب?"
+        "استعمل الامر!\n\n*.edgar ✧ مثال:* ماهي عاصمة اندونيسيا?"
       );
     }
 
     // Ajustamos el prompt para Admin-TK con personalidad única
-    let prompt = `Your name is jeen and your creators is abdo tech and ayoub dev and you are muslim.`;
+    let prompt = `Your name is edgar and your creators is ayoub dev and you are muslim.`;
 
     // Making the API request using the new endpoint
     let response = await fetch(
