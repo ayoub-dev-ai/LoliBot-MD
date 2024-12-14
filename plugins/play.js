@@ -73,7 +73,8 @@ let handler = async (m, { conn, text, usedPrefix }) => {
     }
 };
 
-handler.command = handler.help = ['play', 'ds', 'song'];
+handler.command = ['ds']
+handler.help = ['play', 'ds', 'song'];
 handler.tags = ['downloader'];
 handler.exp = 0;
 handler.limit = true;
@@ -111,7 +112,7 @@ let handler = async (m, { conn, text }) => {
     let minutes = Math.floor(duration / 60);
     let description = results.videos[0].description;
     let seconds = duration % 60;
-    let durationText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;       
+    let durationext = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;       
     let audio = ytdl(videoId, { quality: 'highestaudio' });
     let inputFilePath = './tmp/' + title + '.webm';
     let outputFilePath = './tmp/' + title + '.mp3';
