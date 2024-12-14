@@ -10,7 +10,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
 let tags = {}
 const defaultMenu = {
   before: `
-*_乂 Jeen MD - bot_*
+*_乂 Edgar MD - bot_*
 
 
 *_あ Uptime : [ %muptime ]_*
@@ -109,9 +109,9 @@ const defaultMenu = {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
 
-const vi = ['https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg',
-'https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg',
-'https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg', 'https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg',     'https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg', 'https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg',     'https://i.ibb.co/XbvXSnZ/IMG-20241208-114456.jpg']
+const vi = ['https://qu.ax/Hvjxc.jpg',
+'https://qu.ax/Hvjxc.jpg',
+'https://qu.ax/Hvjxc.jpg', 'https://qu.ax/Hvjxc.jpg',     'https://qu.ax/Hvjxc.jpg', 'https://qu.ax/Hvjxc.jpg',     'https://qu.ax/Hvjxc.jpg']
 
 var vid = vi[Math.floor(Math.random() * (vi.length))]
 
