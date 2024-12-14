@@ -59,9 +59,9 @@ const handler = async (m, { text, usedPrefix, command, conn }) => {
   }
 };
 
-handler.help = ["gemini <سؤال>", "jeen <سؤال>"];
+handler.help = ["edgar <سؤال>", "jeen <سؤال>"];
 handler.tags = ["ai"];
-handler.command = /^(gemini|jeen)$/i; // Admite ambos comandos
+handler.command = /^(gemini|edgar)$/i; // Admite ambos comandos
 
 handler.premium = false;
 handler.register = true;
