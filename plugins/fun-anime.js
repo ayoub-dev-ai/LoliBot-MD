@@ -33,7 +33,7 @@ let handler = async (m, { conn, usedPrefix }) => {
             *⌬ ❛╏  انتهى الوقت*
             *⌬ ❛╏ الاجابه اهي  ${json.response}*
             *⊱─═⪨༻𓆩⚡𓆪༺⪩═─⊰*
-            > Jeen-MD`, conn.tekateki[id][0])
+            > Edgar-MD`, conn.tekateki[id][0])
             delete conn.tekateki[id]
         }, timeout)
     ]
