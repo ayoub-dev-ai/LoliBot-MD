@@ -1,103 +1,129 @@
-import _0x3c3b3b from "node-fetch";
-let handler = async (_0x442252, {
-  conn: _0x25767c,
-  text: _0x4c9ceb
-}) => {
-  if (!_0x4c9ceb) {
-    throw "يرجى إدخال وصف/نص الفيديو\n\n.txt2video sad story";
+import fetch from "node-fetch";
+
+// Handler function to convert text to video
+let handler = async (message, { conn, text }) => {
+  // Check if the user provided any text
+  if (!text) {
+    throw "Please provide a description or video text, e.g. '.txt2video sad story'";
   }
+
   try {
-    _0x442252.reply("قد يستغرق الأمر بعض الوقت حتى يتم إرسال الفيديو");
-    let _0xe2b090 = new Vidnoz();
-    let _0x1b2337 = await _0xe2b090.textToVideo(_0x4c9ceb, "Relaxing", 0, 2, 206);
-    await _0x25767c.delay(300000);
-    let _0xbc699c = await _0xe2b090.getTask(_0x1b2337);
-    const _0xaf1e3a = {
-      url: _0xbc699c.additional_data.video_url
+    // Notify the user that the video is being created
+    message.reply("It may take a while to send the video.");
+
+    // Create an instance of Vidnoz to interact with the API
+    let vidnoz = new Vidnoz();
+
+    // Generate a task ID by sending the text to the Vidnoz API to convert it into a video
+    let taskId = await vidnoz.textToVideo(text, "Relaxing", 0, 2, 206);
+
+    // Use setTimeout wrapped in a Promise to simulate delay
+    await new Promise(resolve => setTimeout(resolve, 300000)); // 5 minutes delay
+
+    // Fetch the status of the video creation task
+    let taskData = await vidnoz.getTask(taskId);
+
+    // Prepare the video URL and additional data for sending
+    const videoData = {
+      url: taskData.additional_data.video_url
     };
-    await _0x25767c.sendMessage(_0x442252.chat, {
-      video: _0xaf1e3a,
-      caption: "`" + _0x4c9ceb + "`\n< Jeen-MD\n\n⏳: " + _0xbc699c.additional_data.duration + " *ثانية*",
+
+    // Send the video to the user
+    await conn.sendMessage(message.chat, {
+      video: videoData,
+      caption: "`" + text + "`\n< Jeen-MD\n\n⏳: " + taskData.additional_data.duration + " *seconds*",
       contextInfo: {
         externalAdReply: {
           showAdAttribution: true,
-          title: _0xbc699c.action,
-          body: _0xbc699c.additional_data.video_url,
+          title: taskData.action,
+          body: taskData.additional_data.video_url,
           mediaType: 1,
-          thumbnail: await (await _0x25767c.getFile(_0xbc699c.additional_data.thumbnail_url)).data,
-          sourceUrl: _0xbc699c.additional_data.video_url
+          thumbnail: await (await conn.getFile(taskData.additional_data.thumbnail_url)).data,
+          sourceUrl: taskData.additional_data.video_url
         }
       }
-    }, {
-      quoted: _0x442252
-    });
-  } catch (_0xcd114e) {
-    throw new Error("حدث خطأ: " + _0xcd114e.message);
+    }, { quoted: message });
+  } catch (error) {
+    // Handle any errors that occurred during the process
+    throw new Error("An error occurred: " + error.message);
   }
 };
+
+// Define the command and tags for the handler
 handler.help = handler.command = ["txt2video"];
 handler.tags = ["ai"];
+
 export default handler;
-const ip = () => {
-  const _0x102cd2 = () => Math.floor(Math.random() * 256);
-  return _0x102cd2() + "." + _0x102cd2() + "." + _0x102cd2() + "." + _0x102cd2();
+
+// Utility function to generate a random IP address
+const generateRandomIp = () => {
+  const randomByte = () => Math.floor(Math.random() * 256);
+  return `${randomByte()}.${randomByte()}.${randomByte()}.${randomByte()}`;
 };
+
+// Vidnoz API client class
 class Vidnoz {
-  constructor(_0x438ccf) {
-    this.authToken = _0x438ccf || null;
+  constructor(authToken = null) {
+    this.authToken = authToken;
     this.apiBaseUrl = "https://tool-api.vidnoz.com/ai/tool";
   }
+
+  // Helper function to get the headers for API requests
   async getHeaders() {
     return {
       "Content-Type": "application/json",
       "X-TASK-VERSION": "2.0.0",
-      Authorization: "Bearer " + this.authToken,
-      "x-forwarded-for": ip()
+      Authorization: `Bearer ${this.authToken}`,
+      "x-forwarded-for": generateRandomIp()
     };
   }
-  async postData(_0x43885e = "", _0x51f372 = {}) {
-    const _0x4681dd = await this.getHeaders();
-    const _0x3ceb19 = await _0x3c3b3b(_0x43885e, {
+
+  // Function to make POST requests to the Vidnoz API
+  async postData(url = "", data = {}) {
+    const headers = await this.getHeaders();
+    const response = await fetch(url, {
       method: "POST",
-      headers: _0x4681dd,
-      body: JSON.stringify(_0x51f372)
+      headers,
+      body: JSON.stringify(data)
     });
-    return _0x3ceb19.json();
+    return response.json();
   }
-  async textToVideo(_0x81ce46, _0xcf08f1, _0xd96ea6, _0x21618e, _0x21bfe0) {
+
+  // Function to create a video from text using the Vidnoz API
+  async textToVideo(text, backgroundMusic, subtitles, voiceGender, voiceType) {
+    const requestData = {
+      text,
+      make_background_music: backgroundMusic,
+      subtitles,
+      voiceOver_gender: voiceGender,
+      voiceOver_voice: voiceType,
+      language: "EN"
+    };
+
     try {
-      const _0x27ccf7 = {
-        text: _0x81ce46,
-        make_background_music: _0xcf08f1,
-        subtitles: _0xd96ea6,
-        voiceOver_gender: _0x21618e,
-        voiceOver_voice: _0x21bfe0,
-        language: "EN"
-      };
-      const _0x1ed9a4 = _0x27ccf7;
-      const _0xa15ea7 = await this.postData(this.apiBaseUrl + "/text-to-video", _0x1ed9a4);
-      return _0xa15ea7.data.task_id;
-    } catch (_0xcb2d87) {
-      throw new Error("Error creating video: " + _0xcb2d87.message);
+      const response = await this.postData(`${this.apiBaseUrl}/text-to-video`, requestData);
+      return response.data.task_id;
+    } catch (error) {
+      throw new Error("Error creating video: " + error.message);
     }
   }
-  async getTask(_0x582ee6) {
+
+  // Function to get the task status of the video generation
+  async getTask(taskId) {
     try {
-      const _0x221d8b = {
-        id: _0x582ee6
-      };
-      const _0x2c311b = _0x221d8b;
-      let _0x2fa887;
-      do {
-        let _0x18254c = await this.postData(this.apiBaseUrl + "/get-task", _0x2c311b);
-        _0x2fa887 = _0x18254c.data;
-        if (_0x2fa887.status === -2) {
-          await new Promise(_0x3ec3fe => setTimeout(_0x3ec3fe, 5000));
-        }
-      } while (_0x2fa887.status === -2);
-      return _0x2fa887;
-    } catch (_0x3f46ba) {
-      throw new Error("Error fetching task: " + _0x3f46ba.message);
+      const response = await this.postData(`${this.apiBaseUrl}/get-task`, { id: taskId });
+      let taskData = response.data;
+
+      // Poll the task status every 5 seconds until it is completed
+      while (taskData.status === -2) {
+        await new Promise(resolve => setTimeout(resolve, 5000));
+        const updatedResponse = await this.postData(`${this.apiBaseUrl}/get-task`, { id: taskId });
+        taskData = updatedResponse.data;
+      }
+
+      return taskData;
+    } catch (error) {
+      throw new Error("Error fetching task: " + error.message);
     }
   }
 }
