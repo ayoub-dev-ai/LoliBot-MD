@@ -5,7 +5,7 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
 let user = global.db.data.users[m.sender]
 let name2 = conn.getName(m.sender)
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? this.user.jid : m.sender
-let pp = await this.profilePictureUrl(who, 'image').catch(_ => 'https://telegra.ph/file/1861aab98389b13db8588.jpg')
+let pp = await this.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/Hvjxc.jpg')
 if (user.registered === true) throw `*⚠️ انت مسجل*\n\n¿تريد ازالة حسابك ?\n\n💬 استعمل الامر *يستبعد تسجيلك*\n*${usedPrefix}unreg* <رقم حسابك>`
 if (!Reg.test(text)) throw `*⚠️ استعمال غلط*\n\n📝 استعمل الامر: *${usedPrefix + command} الاسم.العمر*\n💡 مثال : *${usedPrefix + command}* ${name2}.18`
 let [_, name, splitter, age] = text.match(Reg)
