@@ -1689,7 +1689,7 @@
       "wolflastfeed": 0,
       "wood": 0,
       "wortel": 0,
-      "spam": 1734218142513,
+      "spam": 1734218383118,
       "premiumDate": -1,
       "juegos": 0,
       "crime": 0,
@@ -3524,7 +3524,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 215,
+      "exp": 240,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -123502,10 +123502,10 @@
   },
   "stats": {
     "Menu.js": {
-      "total": 225,
-      "success": 225,
-      "last": 1734218169684,
-      "lastSuccess": 1734218169684
+      "total": 228,
+      "success": 228,
+      "last": 1734218371574,
+      "lastSuccess": 1734218371574
     },
     "_config-make-account.js": {
       "total": 53,
@@ -123520,10 +123520,10 @@
       "lastSuccess": 1734182473940
     },
     "ai-apk3.js": {
-      "total": 291,
-      "success": 277,
-      "last": 1734217767097,
-      "lastSuccess": 1734217767097
+      "total": 293,
+      "success": 278,
+      "last": 1734218353624,
+      "lastSuccess": 1734218350571
     },
     "_config-gift.js": {
       "total": 11,
@@ -123664,10 +123664,10 @@
       "lastSuccess": 1734124109155
     },
     "Jeen-ai.js": {
-      "total": 41,
-      "success": 33,
-      "last": 1734218142515,
-      "lastSuccess": 1734218142515
+      "total": 45,
+      "success": 37,
+      "last": 1734218383119,
+      "lastSuccess": 1734218383119
     },
     "jeen-ai.js": {
       "total": 4,
