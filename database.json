@@ -12865,7 +12865,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 233,
+      "exp": 240,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -77871,7 +77871,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 103,
+      "exp": 130,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -78206,7 +78206,7 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "spam": 1734189164993
+      "spam": 1734268871174
     },
     "212705233565@s.whatsapp.net": {
       "afk": -1,
@@ -82972,7 +82972,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 25,
+      "exp": 33,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -165796,7 +165796,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 36,
+      "exp": 77,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -166106,7 +166106,7 @@
       "wolflastfeed": 0,
       "wood": 0,
       "wortel": 0,
-      "spam": 1734268016615,
+      "spam": 1734269375777,
       "premiumDate": -1,
       "juegos": 0,
       "crime": 0,
@@ -179942,10 +179942,10 @@
   },
   "stats": {
     "Menu.js": {
-      "total": 274,
-      "success": 274,
-      "last": 1734268128567,
-      "lastSuccess": 1734268128567
+      "total": 277,
+      "success": 277,
+      "last": 1734269358055,
+      "lastSuccess": 1734269358055
     },
     "_config-make-account.js": {
       "total": 54,
@@ -179960,10 +179960,10 @@
       "lastSuccess": 1734182473940
     },
     "ai-apk3.js": {
-      "total": 446,
-      "success": 417,
-      "last": 1734268656015,
-      "lastSuccess": 1734268656015
+      "total": 447,
+      "success": 418,
+      "last": 1734268875981,
+      "lastSuccess": 1734268875981
     },
     "_config-gift.js": {
       "total": 11,
@@ -179996,9 +179996,9 @@
       "lastSuccess": 0
     },
     "addt.js": {
-      "total": 27,
+      "total": 28,
       "success": 12,
-      "last": 1734268462944,
+      "last": 1734269375778,
       "lastSuccess": 1734265993698
     },
     "_config-top.js": {
@@ -180152,10 +180152,10 @@
       "lastSuccess": 1734192711154
     },
     "play.js": {
-      "total": 14,
-      "success": 12,
-      "last": 1734267472635,
-      "lastSuccess": 1734267472635
+      "total": 15,
+      "success": 13,
+      "last": 1734269128607,
+      "lastSuccess": 1734269128607
     }
   },
   "msgs": {},
