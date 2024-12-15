@@ -6474,7 +6474,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 84,
+      "exp": 111,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -6784,7 +6784,7 @@
       "wolflastfeed": 0,
       "wood": 0,
       "wortel": 0,
-      "spam": 1734246582444,
+      "spam": 1734248262700,
       "premiumDate": -1,
       "juegos": 0,
       "crime": 0,
@@ -81306,7 +81306,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 308,
+      "exp": 348,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -81640,7 +81640,8 @@
       "psenjata": 0,
       "psepick": 0,
       "robo": 0,
-      "roboxp": 0
+      "roboxp": 0,
+      "spam": 1734247873707
     },
     "967779489212@s.whatsapp.net": {
       "afk": -1,
@@ -94906,7 +94907,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 25,
+      "exp": 78,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -95335,7 +95336,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 30,
+      "exp": 71,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -138887,10 +138888,10 @@
       "lastSuccess": 1734182473940
     },
     "ai-apk3.js": {
-      "total": 298,
-      "success": 281,
-      "last": 1734229201072,
-      "lastSuccess": 1734229201072
+      "total": 302,
+      "success": 285,
+      "last": 1734248073944,
+      "lastSuccess": 1734248073944
     },
     "_config-gift.js": {
       "total": 11,
@@ -138959,10 +138960,10 @@
       "lastSuccess": 1734216458053
     },
     "fun-anime.js": {
-      "total": 11,
-      "success": 8,
-      "last": 1734138937090,
-      "lastSuccess": 1734138937090
+      "total": 14,
+      "success": 11,
+      "last": 1734248262776,
+      "lastSuccess": 1734248262776
     },
     "copilot.js": {
       "total": 19,
