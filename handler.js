@@ -1317,8 +1317,8 @@ if (opts['autoread']) await this.readMessages([m.key])
 if (settingsREAD.autoread2) await this.readMessages([m.key])  
 //if (settingsREAD.autoread2 == 'true') await this.readMessages([m.key])    
 	    
-if (!m.fromMem && m.text.match(/(bo|Abdo|Jeen|Ayoub|:v)/gi)) {
-let emot = pickRandom(["🇲🇦", "⚡", "✨", "⚡", "🇷🇺", "🏴", "🗿", "💫", "🌟", "🤩", "😏", "😳", "🥵", "🤯", "😱", "😨", "🤫", "🥴", "🤧", "🤑", "🤠", "🤖", "🤝", "💪", "👑", "🫠", "🐱", "🥹", "🐆", "🐅", "⚡️", "🪼", "☃️", "⛄️", "🌝", "🌛", "🌜", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💘", "💝", "💟", "🌝", "😎", "🔥", "😍", "🐦"])
+if (!m.fromMem && m.text.match(/(mok|Ayob|edgar|Ayoub|lol)/gi)) {
+let emot = pickRandom(["🇲🇦", "🇲🇦", "🇲🇦", "🇲🇦", "🇲🇦", "🇲🇦", "🇲🇦", "🇲🇦", "🌟", "🇲🇦", "🇲🇦", "🇲🇦", "🤡", "✨", "🇲🇦", "🤨", "🤑", "🙂", "🇷🇺", "🇷🇺", "🇷🇺", "🇷🇺", "🇷🇺", "🇷🇺", "🇲🇦", "🇲🇦"])
 this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
 function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}}}
 
@@ -1354,7 +1354,7 @@ text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'We
 if (chat.antifake && isBotAdminNn && action === 'add') {
 const numerosPermitidos = ["212", "265", "92", "91", "90", "210", "60", "61", "62", "40", "48", "49", "93", "94", "98", "258"] //PUEDES EDITAR LOS USUARIOS QUE SE ELIMINARÁN SI EMPIEZA POR CUALQUIER DE ESOS NÚMEROS	
 if (numerosPermitidos.some(num => user.startsWith(num))) {	
-this.sendMessage(id, { text: `@${user.split("@")[0]} Nos numero fake no esta permitido el este grupo hasta la próxima...`, mentions: [user] }, { quoted: null });          
+this.sendMessage(id, { text: `@${user.split("@")[0]} انت غير حقيقي...`, mentions: [user] }, { quoted: null });          
 let responseb = await this.groupParticipantsUpdate(id, [user], 'remove')
 if (responseb[0].status === "404") return      
 return    
@@ -1426,10 +1426,10 @@ export async function callUpdate(callUpdate) {
     for (let nk of callUpdate) {
     if (nk.isGroup == false) {
     if (nk.status == "offer") {
-    let callmsg = await this.reply(nk.from, `ʜᴏʟᴀ *@${nk.from.split('@')[0]}*, ʟᴀs ${nk.isVideo ? 'videollamadas' : 'llamadas'} ɴᴏ ᴇsᴛᴀɴ ᴘᴇʀᴍɪᴛɪᴅᴀs, sᴇʀᴀs ʙʟᴏǫᴜᴇᴀᴅᴏ.\n\nsɪ ᴀᴄᴄɪᴅᴇɴᴛᴀʟᴍᴇɴᴛᴇ ʟʟᴀᴍᴀsᴛᴇ ᴘᴏɴɢᴀsᴇ ᴇɴ ᴄᴏɴᴛᴀᴄᴛᴏ ᴄᴏɴ ᴍɪ ᴄʀᴇᴀᴅᴏʀ ᴘᴀʀᴀ ǫᴜᴇ ᴛᴇ ᴅᴇsʙʟᴏǫᴜᴇᴇ!\n\nɢʀᴜᴘᴏ ᴀsɪsᴛᴇɴᴄɪᴀ ғᴀᴄᴇʙᴏᴏᴋ: https://facebook.com/groups/872989990425789/`, false, { mentions: [nk.from] })
+    let callmsg = await this.reply(nk.from, `مرحبا *@${nk.from.split('@')[0]}*, ʟᴀs ${nk.isVideo ? 'videollamadas' : 'llamadas'} لقد تم حظرك يمكنك التواصل مع المطور!\n\n القناة: https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G`, false, { mentions: [nk.from] })
     //let data = global.owner.filter(([id, isCreator]) => id && isCreator)
     //await this.sendContact(nk.from, data.map(([id, name]) => [id, name]), false, { quoted: callmsg })
-    let vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;𝙇𝙤𝙡𝙞𝘽𝙤𝙩-𝙈𝘿 👑;;;\nFN:𝙇𝙤𝙡𝙞𝘽𝙤𝙩-𝙈𝘿\nORG:𝙇𝙤𝙡𝙞𝘽𝙤𝙩-𝙈𝘿 👑\nTITLE:\nitem1.TEL;waid=573147616444:+57 314 7616444\nitem1.X-ABLabel:𝙇𝙤𝙡𝙞𝘽𝙤𝙩-𝙈𝘿 👑\nX-WA-BIZ-DESCRIPTION:[❗] ᴇsᴄʀɪʙɪ sᴏʟᴏ ᴘᴏʀ ᴄᴏsᴀs ᴅᴇʟ ʙᴏᴛ.\nX-WA-BIZ-NAME:𝙇𝙤𝙡𝙞𝘽𝙤𝙩-𝙈𝘿 👑\nEND:VCARD`
+    let vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;edgar-𝙈𝘿 👑;;;\nFN:edgar-𝙈𝘿\nORG:edgar-𝙈𝘿 👑\nTITLE:\nitem1.TEL;waid=212710723017:212710723017\nitem1.X-ABLabel:edgar-𝙈𝘿 👑\nX-WA-BIZ-DESCRIPTION:بوت\nX-WA-BIZ-NAME:edgar-𝙈𝘿 👑\nEND:VCARD`
     await this.sendMessage(nk.from, { contacts: { displayName: '𝙇𝙤𝙡𝙞𝘽𝙤𝙩-𝙈𝘿 👑', contacts: [{ vcard }] }}, {quoted: callmsg})
     await this.updateBlockStatus(nk.from, 'block')
     }
