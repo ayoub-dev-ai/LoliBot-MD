@@ -1,90 +1,109 @@
-import yts from 'yt-search'
-import fs from 'fs'
-import os from 'os'
-import axios from 'axios'
+import yts from "youtube-yts";
+import fetch from 'node-fetch';
+import { ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
 
-const handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `Use example ${usedPrefix}${command} <اسم الفيديو>`;
+let handler = async (message, { args, prefix }) => {
+    const text = args.join(' '); 
+    const yt_play = await search(args.join(' '));
+    
+    if (!text) return message.reply('🚩 مثال : .play mangos automovito');
 
-  // Pencarian video berdasarkan query text
-  const search = await yts(text);
-  const vid = search.videos[Math.floor(Math.random() * search.videos.length)];
-  if (!vid) throw 'Video not found, try another title';
+    let videoSearch;
+    try {
+        videoSearch = await yts(text);
+    } catch (error) {
+        return message.reply('❌ خطا.');
+    }
 
-  const { title, thumbnail, timestamp, views, ago, url } = vid;
+    if (!videoSearch.all.length) {
+        return message.react("❌").then(() => message.channel.send("❌ لا توجد نتائج."));
+    }
 
-  // Mengirim pesan awal dengan thumbnail
-  await conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: 'Please wait...' }, { quoted: m });
+    const vid = videoSearch.all[0];
+    const videoUrl = vid.url;
 
-  try {
-    // Mendapatkan URL audio menggunakan API ryzendesu
-    const response = await axios.get(`https://api.ryzendesu.vip/api/downloader/ytmp3?url=${encodeURIComponent(url)}`);
-    const downloadUrl = response.data.url;
+    const rowPlay = new ActionRowBuilder()
+        .addComponents(
+            new ButtonBuilder()
+                .setCustomId('audio')
+                .setLabel('Audio')
+                .setStyle(ButtonStyle.Primary),
+            new ButtonBuilder()
+                .setCustomId('video')
+                .setLabel('Video')
+                .setStyle(ButtonStyle.Secondary)
+        );
 
-    if (!downloadUrl) throw new Error('Audio URL not found');
-
-    // Lokasi file sementara
-    const tmpDir = os.tmpdir();
-    const filePath = `${tmpDir}/${title}.mp3`;
-
-    // Mengunduh file audio dan menyimpannya di direktori sementara
-    const audioResponse = await axios({
-      method: 'get',
-      url: downloadUrl,
-      responseType: 'stream',
+    let msgPlay;
+    
+    // Enviar el mensaje con la imagen
+    msgPlay = await message.channel.send({
+        content: `**◉ Título:** ${vid.title}\n\n**◉ Descripción:** ${vid.description}\n**◉ Vistas:** ${vid.views}\n**◉ Publicado:** ${vid.ago}`,
+        files: [
+            {
+                attachment: vid.thumbnail,
+                name: 'thumbnail.png' // Puedes darle un nombre a la imagen
+            }
+        ],
+        components: [rowPlay]
     });
 
-    const writableStream = fs.createWriteStream(filePath);
-    audioResponse.data.pipe(writableStream);
+    const filterPlay = i => i.user.id === message.author.id;
+    const collectorPlay = msgPlay.createMessageComponentCollector({ filter: filterPlay, time: 15000 });
 
-    writableStream.on('finish', async () => {
-      // Mengirim file audio
-      await conn.sendMessage(m.chat, {
-        audio: {
-          url: filePath
-        },
-        mimetype: 'audio/mpeg',
-        fileName: `${title}.mp3`,
-        caption: `Title: ${title}\nLength: ${timestamp}\nViews: ${views}\nUploaded: ${ago}`,
-        contextInfo: {
-          externalAdReply: {
-            showAdAttribution: true,
-            mediaType: 2,
-            mediaUrl: url,
-            title: title,
-            body: 'Audio Download',
-            sourceUrl: url,
-            thumbnail: await (await conn.getFile(thumbnail)).data,
-          },
-        },
-      }, { quoted: m });
+    collectorPlay.on('collect', async interaction => {
+        if (interaction.customId === 'audio') {
+            const apiUrl = `https://deliriussapi-oficial.vercel.app/download/ytmp3?url=${encodeURIComponent(videoUrl)}`;
+            const apiResponse = await fetch(apiUrl);
+            const delius = await apiResponse.json();
 
-      // Menghapus file setelah dikirim
-      fs.unlink(filePath, (err) => {
-        if (err) {
-          console.error(`Failed to delete audio file: ${err}`);
-        } else {
-          console.log(`Deleted audio file: ${filePath}`);
+            if (!delius.status) {
+                return interaction.reply("⚠️ خطا في تحميل الموسيقى.");
+            }
+
+            const downloadUrl = delius.data.download.url;
+            interaction.reply({ files: [{ attachment: downloadUrl, name: `${vid.title}.mp3` }] }).then(() => message.react("✅"));
         }
-      });
+
+        if (interaction.customId === 'video') {
+            const apiUrl = `https://deliriussapi-oficial.vercel.app/download/ytmp4?url=${encodeURIComponent(videoUrl)}`;
+            const apiResponse = await fetch(apiUrl);
+            const delius = await apiResponse.json();
+
+            if (!delius.status) {
+                return interaction.reply("⚠️ خطا في تحميل الفديز.");
+            }
+
+            const downloadUrl = delius.data.download.url;
+            interaction.reply({ files: [{ attachment: downloadUrl, name: `${vid.title}.mp4` }] }).then(() => message.react("✅"));
+        }
     });
 
-    writableStream.on('error', (err) => {
-      console.error(`Failed to write audio file: ${err}`);
-      m.reply('Failed to download audio');
+    collectorPlay.on('end', collected => {
+        if (collected.size === 0) {
+            message.reply("⚠️ يجب  عليك  الاختيار.");
+        }
     });
-  } catch (error) {
-    console.error('Error:', error.message);
-    throw `Error: ${error.message}. Please check the URL and try again.`;
-  }
 };
-
-handler.help = ['play'].map((v) => v + ' <query>');
+handler.help = ['play'];
 handler.tags = ['downloader'];
 handler.command = /^(play)$/i;
+handler.register = true;
+handler.limit = 1
+handler.rowner = false
+handler.admin = false
+handler.botAdmin = false
+export default handler;
 
-handler.limit = 8
-handler.register = true
-handler.disable = false
+async function search(query, options = {}) {
+const search = await yts.search({query, hl: 'ar', gl: 'en', ...options});
+return search.videos;
+}
 
-export default handler
+function MilesNumber(number) {
+const exp = /(\d)(?=(\d{3})+(?!\d))/g;
+const rep = '$1.';
+const arr = number.toString().split('.');
+arr[0] = arr[0].replace(exp, rep);
+return arr[1] ? arr.join('.') : arr[0];
+}

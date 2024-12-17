@@ -1,129 +1,109 @@
-import fs from 'fs';
-import path from 'path';
-import ytdl from 'youtubedl-core';
-import { Client } from 'undici';
-import { fileURLToPath } from 'url';
+import yts from "youtube-yts";
 import fetch from 'node-fetch';
-import { exec } from 'child_process';
-import util from 'util';
+import { ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
 
-const execPromise = util.promisify(exec);
+let handler = async (message, { args, prefix }) => {
+    const text = args.join(' '); 
+    const yt_play = await search(args.join(' '));
+    
+    if (!text) return message.reply('🚩 مثال : .play mangos automovito');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+    let videoSearch;
+    try {
+        videoSearch = await yts(text);
+    } catch (error) {
+        return message.reply('❌ خطا.');
+    }
 
-let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) => {
-  let chat = global.db.data.chats[m.chat];
-  if (!args || !args[0]) throw `✳️ Example:\n${usedPrefix + command}`;
-  if (!args[0].match(/youtu/gi)) throw `❎ Verify that the YouTube link`;
-  await m.react('⏳');
+    if (!videoSearch.all.length) {
+        return message.react("❌").then(() => message.channel.send("❌ لا توجد نتائج."));
+    }
 
-  const videoDetails = await ytddl(args[0]);
-  if (!videoDetails) throw `❎ Error downloading video`;
+    const vid = videoSearch.all[0];
+    const videoUrl = vid.url;
 
-  console.log('Video Details:', videoDetails); // Log video details for debugging
+    const rowPlay = new ActionRowBuilder()
+        .addComponents(
+            new ButtonBuilder()
+                .setCustomId('audio')
+                .setLabel('Audio')
+                .setStyle(ButtonStyle.Primary),
+            new ButtonBuilder()
+                .setCustomId('video')
+                .setLabel('Video')
+                .setStyle(ButtonStyle.Secondary)
+        );
 
-  const { url, title, author, description } = videoDetails;
+    let msgPlay;
+    
+    // Enviar el mensaje con la imagen
+    msgPlay = await message.channel.send({
+        content: `**◉ Título:** ${vid.title}\n\n**◉ Descripción:** ${vid.description}\n**◉ Vistas:** ${vid.views}\n**◉ Publicado:** ${vid.ago}`,
+        files: [
+            {
+                attachment: vid.thumbnail,
+                name: 'thumbnail.png' // Puedes darle un nombre a la imagen
+            }
+        ],
+        components: [rowPlay]
+    });
 
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error('Failed to fetch the video URL');
-  }
+    const filterPlay = i => i.user.id === message.author.id;
+    const collectorPlay = msgPlay.createMessageComponentCollector({ filter: filterPlay, time: 15000 });
 
-  // Check if the content is indeed a video (M3U8 playlist)
-  const contentType = response.headers.get('content-type');
-  console.log('Fetched Content-Type:', contentType);
+    collectorPlay.on('collect', async interaction => {
+        if (interaction.customId === 'audio') {
+            const apiUrl = `https://deliriussapi-oficial.vercel.app/download/ytmp3?url=${encodeURIComponent(videoUrl)}`;
+            const apiResponse = await fetch(apiUrl);
+            const delius = await apiResponse.json();
 
-  if (!contentType || contentType !== 'application/vnd.apple.mpegurl') {
-    throw new Error('The fetched URL is not a valid video (it might be an HLS stream).');
-  }
+            if (!delius.status) {
+                return interaction.reply("⚠️ خطا في تحميل الموسيقى.");
+            }
 
-  // Download and convert HLS stream using ffmpeg
-  const videoFilePath = path.join(__dirname, `${title || 'video'}.mp4`);
-  await downloadAndConvertHLS(url, videoFilePath);
+            const downloadUrl = delius.data.download.url;
+            interaction.reply({ files: [{ attachment: downloadUrl, name: `${vid.title}.mp3` }] }).then(() => message.react("✅"));
+        }
 
-  const caption = `✼ ••๑⋯❀ Y O U T U B E ❀⋯⋅๑•• ✼
-  
-❏ Title: ${title || 'Unknown'}
-❒ Author: ${author || 'Unknown'}
-❒ Description: ${description || 'No description available'}
-❒ Link: ${args[0]}
-⊱─━⊱༻●༺⊰━─⊰`;
+        if (interaction.customId === 'video') {
+            const apiUrl = `https://deliriussapi-oficial.vercel.app/download/ytmp4?url=${encodeURIComponent(videoUrl)}`;
+            const apiResponse = await fetch(apiUrl);
+            const delius = await apiResponse.json();
 
-  // Send the video after conversion
-  conn.sendFile(m.chat, videoFilePath, `${title || 'video'}.mp4`, caption, m, false, { asDocument: chat.useDocument });
+            if (!delius.status) {
+                return interaction.reply("⚠️ خطا في تحميل الفديز.");
+            }
 
-  await m.react('✅');
+            const downloadUrl = delius.data.download.url;
+            interaction.reply({ files: [{ attachment: downloadUrl, name: `${vid.title}.mp4` }] }).then(() => message.react("✅"));
+        }
+    });
+
+    collectorPlay.on('end', collected => {
+        if (collected.size === 0) {
+            message.reply("⚠️ يجب  عليك  الاختيار.");
+        }
+    });
 };
-
-// Function to download and convert HLS stream to MP4 using ffmpeg
-async function downloadAndConvertHLS(hlsUrl, outputPath) {
-  try {
-    console.log(`Downloading and converting HLS stream to MP4: ${hlsUrl}`);
-
-    // Use ffmpeg to download and convert HLS to MP4
-    const command = `ffmpeg -i "${hlsUrl}" -c copy -bsf:a aac_adtstoasc "${outputPath}"`;
-
-    // Execute the command and wait for completion
-    await execPromise(command);
-    console.log(`Successfully converted HLS stream to MP4: ${outputPath}`);
-  } catch (error) {
-    console.error('Error during download and conversion:', error);
-    throw new Error('Failed to convert HLS stream to MP4');
-  }
-}
-
-handler.help = ['ytmp4 <yt-link>'];
+handler.help = ['play'];
 handler.tags = ['downloader'];
-handler.command = ['ytmp4', 'video', 'ytv'];
-handler.diamond = false;
-
+handler.command = /^(play)$/i;
+handler.register = true;
+handler.limit = 1
+handler.rowner = false
+handler.admin = false
+handler.botAdmin = false
 export default handler;
 
-async function getCookies() {
-  const cookiesPath = path.resolve(__dirname, '../assets/cookies.json');
-  if (!fs.existsSync(cookiesPath)) {
-    throw new Error('Cookies file not found');
-  }
-  return JSON.parse(fs.readFileSync(cookiesPath, 'utf-8'));
+async function search(query, options = {}) {
+const search = await yts.search({query, hl: 'ar', gl: 'en', ...options});
+return search.videos;
 }
 
-async function createClient() {
-  const cookies = await getCookies();
-  return new Client("https://www.youtube.com", {
-    headers: {
-      "Cookie": cookies.map(cookie => `${cookie.name}=${cookie.value}`).join('; ')
-    }
-  });
+function MilesNumber(number) {
+const exp = /(\d)(?=(\d{3})+(?!\d))/g;
+const rep = '$1.';
+const arr = number.toString().split('.');
+arr[0] = arr[0].replace(exp, rep);
+return arr[1] ? arr.join('.') : arr[0];
 }
-
-async function ytddl(url) {
-  try {
-    const client = await createClient();
-    const yt = await ytdl.getInfo(url, { requestOptions: { client: client } });
-
-    console.log('YouTube Info:', yt); // Log the full video info to see available formats
-
-    // Find the highest video + audio format, or separate video and audio formats
-    const videoFormat = ytdl.chooseFormat(yt.formats, { quality: 'highest', filter: 'video' });
-    const audioFormat = ytdl.chooseFormat(yt.formats, { quality: 'highest', filter: 'audio' });
-
-    console.log('Selected Video Format:', videoFormat);  // Log the selected video format
-    console.log('Selected Audio Format:', audioFormat);  // Log the selected audio format
-
-    if (!videoFormat || !audioFormat) {
-      throw new Error('No suitable video or audio format found');
-    }
-
-    // Return video details with proper URL and metadata
-    return {
-      url: videoFormat.url, // Use video URL (can combine video + audio if necessary)
-      title: yt.videoDetails.title,
-      author: yt.videoDetails.author.name,
-      description: yt.videoDetails.description,
-    };
-  } catch (error) {
-    console.error("An error occurred:", error);
-    return null; // Ensure null is returned on error
-  }
-                            }
