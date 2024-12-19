@@ -13,7 +13,7 @@ let song = songInfo[0];
 const res = await fetch(`https://deliriussapi-oficial.vercel.app/download/spotifydl?url=${song.url}`);
 const data = await res.json();
 if (!data || !data.data || !data.data.url) throw "No se pudo obtener el enlace de descarga.";
-let spotifyMessage = `*• Título:* ${song.name}\n*• Artista:* ${song.artista.join(', ')}\n*• Cover:* ${data.data.cover}\n\n> 🚀 *ᴱⁿᵛᶦᵃⁿᵈᵒ ᶜᵃⁿᶜᶦᵒ́ⁿ ᵃᵍᵘᵃʳᵈᵉ ᵘⁿ ᵐᵒᵐᵉⁿᵗᵒ....*`;
+let spotifyMessage = `*• العنوان:* ${song.name}\n*• الفنان:* ${song.artista.join(', ')}\n*• الخلفية:* ${data.data.cover}\n\n> 🚀 *يرجى الانتظار لحظة....*`;
 await conn.sendMessage(m.chat, {text: spotifyMessage, contextInfo: { forwardingScore: 9999999, isForwarded: true, 
 externalAdReply: {
 showAdAttribution: true,
