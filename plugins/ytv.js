@@ -1,109 +1,81 @@
-import yts from "youtube-yts";
-import fetch from 'node-fetch';
-import { ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
+import yts from 'yt-search'
+import fs from 'fs'
+import os from 'os'
+import axios from 'axios'
 
-let handler = async (message, { args, prefix }) => {
-    const text = args.join(' '); 
-    const yt_play = await search(args.join(' '));
-    
-    if (!text) return message.reply('🚩 مثال : .play mangos automovito');
+const handler = async (m, { conn, command, text, usedPrefix }) => {
+  if (!text) throw `استخدم المثال: ${usedPrefix}${command} <كلمة البحث>`;
 
-    let videoSearch;
-    try {
-        videoSearch = await yts(text);
-    } catch (error) {
-        return message.reply('❌ خطا.');
-    }
+  const search = await yts(text);
+  const vid = search.videos[Math.floor(Math.random() * search.videos.length)];
+  if (!vid) throw 'لم يتم العثور على فيديو، حاول باستخدام عنوان آخر';
 
-    if (!videoSearch.all.length) {
-        return message.react("❌").then(() => message.channel.send("❌ لا توجد نتائج."));
-    }
+  const { title, thumbnail, timestamp, views, ago, url } = vid;
 
-    const vid = videoSearch.all[0];
-    const videoUrl = vid.url;
+  await conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: 'يرجى الانتظار...' }, { quoted: m });
 
-    const rowPlay = new ActionRowBuilder()
-        .addComponents(
-            new ButtonBuilder()
-                .setCustomId('audio')
-                .setLabel('Audio')
-                .setStyle(ButtonStyle.Primary),
-            new ButtonBuilder()
-                .setCustomId('video')
-                .setLabel('Video')
-                .setStyle(ButtonStyle.Secondary)
-        );
+  try {
+    const response = await axios.get(`${APIs.ryzen}/api/downloader/ytmp4?url=${encodeURIComponent(url)}`);
+    const downloadUrl = response.data.url;
 
-    let msgPlay;
-    
-    // Enviar el mensaje con la imagen
-    msgPlay = await message.channel.send({
-        content: `**◉ Título:** ${vid.title}\n\n**◉ Descripción:** ${vid.description}\n**◉ Vistas:** ${vid.views}\n**◉ Publicado:** ${vid.ago}`,
-        files: [
-            {
-                attachment: vid.thumbnail,
-                name: 'thumbnail.png' // Puedes darle un nombre a la imagen
-            }
-        ],
-        components: [rowPlay]
+    if (!downloadUrl) throw new Error('لم يتم العثور على رابط الفيديو');
+
+    const tmpDir = os.tmpdir();
+    const filePath = `${tmpDir}/${title}.mp4`;
+
+    const videoResponse = await axios({
+      method: 'get',
+      url: downloadUrl,
+      responseType: 'stream',
     });
 
-    const filterPlay = i => i.user.id === message.author.id;
-    const collectorPlay = msgPlay.createMessageComponentCollector({ filter: filterPlay, time: 15000 });
+    const writableStream = fs.createWriteStream(filePath);
+    videoResponse.data.pipe(writableStream);
 
-    collectorPlay.on('collect', async interaction => {
-        if (interaction.customId === 'audio') {
-            const apiUrl = `https://deliriussapi-oficial.vercel.app/download/ytmp3?url=${encodeURIComponent(videoUrl)}`;
-            const apiResponse = await fetch(apiUrl);
-            const delius = await apiResponse.json();
+    writableStream.on('finish', async () => {
+      await conn.sendMessage(m.chat, {
+        video: fs.createReadStream(filePath),
+        mimetype: 'video/mp4',
+        fileName: `${title}.mp4`,
+        caption: `العنوان: ${title}\nالطول: ${timestamp}\nعدد المشاهدات: ${views}\nتم الرفع: ${ago}`,
+        contextInfo: {
+          externalAdReply: {
+            showAdAttribution: true,
+            mediaType: 2,
+            mediaUrl: url,
+            title: title,
+            body: 'تحميل الفيديو',
+            sourceUrl: url,
+            thumbnail: await (await conn.getFile(thumbnail)).data,
+          },
+        },
+      }, { quoted: m });
 
-            if (!delius.status) {
-                return interaction.reply("⚠️ خطا في تحميل الموسيقى.");
-            }
-
-            const downloadUrl = delius.data.download.url;
-            interaction.reply({ files: [{ attachment: downloadUrl, name: `${vid.title}.mp3` }] }).then(() => message.react("✅"));
+      fs.unlink(filePath, (err) => {
+        if (err) {
+          console.error(`فشل في حذف الملف الفيديو: ${err}`);
+        } else {
+          console.log(`تم حذف الملف الفيديو: ${filePath}`);
         }
-
-        if (interaction.customId === 'video') {
-            const apiUrl = `https://deliriussapi-oficial.vercel.app/download/ytmp4?url=${encodeURIComponent(videoUrl)}`;
-            const apiResponse = await fetch(apiUrl);
-            const delius = await apiResponse.json();
-
-            if (!delius.status) {
-                return interaction.reply("⚠️ خطا في تحميل الفديز.");
-            }
-
-            const downloadUrl = delius.data.download.url;
-            interaction.reply({ files: [{ attachment: downloadUrl, name: `${vid.title}.mp4` }] }).then(() => message.react("✅"));
-        }
+      });
     });
 
-    collectorPlay.on('end', collected => {
-        if (collected.size === 0) {
-            message.reply("⚠️ يجب  عليك  الاختيار.");
-        }
+    writableStream.on('error', (err) => {
+      console.error(`فشل في كتابة الملف الفيديو: ${err}`);
+      m.reply('فشل في تنزيل الفيديو');
     });
+  } catch (error) {
+    console.error('خطأ:', error.message);
+    throw `خطأ: ${error.message}. الرجاء التحقق من الرابط والمحاولة مرة أخرى.`;
+  }
 };
-handler.help = ['play'];
+
+handler.help = ['ytv'].map((v) => v + ' <استعلام>');
 handler.tags = ['downloader'];
-handler.command = /^(play)$/i;
-handler.register = true;
-handler.limit = 1
-handler.rowner = false
-handler.admin = false
-handler.botAdmin = false
-export default handler;
+handler.command = /^(ytv)$/i;
 
-async function search(query, options = {}) {
-const search = await yts.search({query, hl: 'ar', gl: 'en', ...options});
-return search.videos;
-}
+handler.limit = 8
+handler.register = true
+handler.disable = false
 
-function MilesNumber(number) {
-const exp = /(\d)(?=(\d{3})+(?!\d))/g;
-const rep = '$1.';
-const arr = number.toString().split('.');
-arr[0] = arr[0].replace(exp, rep);
-return arr[1] ? arr.join('.') : arr[0];
-}
+export default handler
