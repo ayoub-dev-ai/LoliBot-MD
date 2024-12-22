@@ -75,9 +75,6 @@ const handler = async (m, { conn, command, text, usedPrefix }) => {
 handler.help = ['play'].map((v) => v + ' <استعلام>');
 handler.tags = ['downloader'];
 handler.command = /^(play)$/i;
-
-handler.limit = 8
-handler.register = true
 handler.disable = false
 
 export default handler
