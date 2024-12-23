@@ -102,7 +102,7 @@ global.redes = [nna, nna2, yt, nn, md, tiktok, fb, nnn, face]
 
 //------------------------[ Info | Datos ]---------------------------
 
-global.wait = 'الرجاء الانتظار لحظة\n\n> *Jeen-MD*'
+global.wait = 'الرجاء الانتظار لحظة\n\n> *Edgar-MD*'
 global.waitt = '*⌛ _ᴡᴀɪᴛ ᴘʟᴇᴀsᴇ..._ ▬▬▭▭▭*'
 global.waittt = '*⌛ _ᴡᴀɪᴛ ᴘʟᴇᴀsᴇ..._ ▬▬▬▬▭▭*'
 global.waitttt = '*⌛ _ᴡᴀɪᴛ ᴘʟᴇᴀsᴇ..._ ▬▬▬▬▬▬▭*'
