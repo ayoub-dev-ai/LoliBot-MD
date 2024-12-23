@@ -1,3 +1,17 @@
+/*⚠ PROHIBIDO EDITAR ⚠
+
+El codigo de este archivo esta totalmente hecho por:
+- Aiden_NotLogic >> https://github.com/ferhacks
+
+El codigo de este archivo fue parchado por:
+- ReyEndymion >> https://github.com/ReyEndymion
+- BrunoSobrino >> https://github.com/BrunoSobrino
+
+Contenido adaptado por:
+- GataNina-Li >> https://github.com/GataNina-Li
+- elrebelde21 >> https://github.com/elrebelde21
+*/
+
 const {
   useMultiFileAuthState,
   DisconnectReason,
@@ -33,8 +47,8 @@ let crm3 = "SBpbmZvLWRvbmFyLmpz";
 let crm4 = "IF9hdXRvcmVzcG9uZGVyLmpzIGluZm8tYm90Lmpz";
 let drm1 = "CkphZGlib3QsIEhlY2hv";
 let drm2 = "IHBvciBAQWlkZW5fTm90TG9naWM";
-let rtx = "*🔰 LoliBot-MD 🔰*\nㅤㅤㅤㅤ*Ser sub bot*\n\n*Con otro telefono que tengas o en la PC escanea este QR para convertirte en un sub bot*\n\n*1. Haga clic en los tres puntos en la esquina superior derecha*\n*2. Toca WhatsApp Web*\n*3. Escanee este codigo QR*\n*Este código QR expira en 45 segundos!*\n\n> *⚠️ No nos hacemos responsable del mal uso que se le pueda dar o si el numero se manda a soporte.. ustedes tienen el deber se seguir al pie de la letra los terminos y condiciones y privacidad (escribe eso y te los dará)*";
-let rtx2 = "🟢 *_NUEVA FUNCIÓN DE HACERTE UN SUB BOT_* 🟢\n\n*1️⃣ Diríjase en los tres puntos en la esquina superior derecha*\n*2️⃣ Ir a la opción Dispositivos vinculados*\n*3️⃣ da click en vincular con codigo de teléfono*\n*4️⃣ pega el codigo a continuación*\n\n> *⚠️ No nos hacemos responsable del mal uso que se le pueda dar o si el numero se manda a soporte.. ustedes tienen el deber se seguir al pie de la letra los terminos y condiciones y privacidad (escribe eso y te los dará)*";
+let rtx = "*🔰 Edgar-MD 🔰*\nㅤㅤㅤㅤ*QR*\n\n*باستخدام هاتف آخر لديك أو على جهاز الكمبيوتر، قم بمسح QR هذا ليصبح روبوتًا فرعيًا*\n\n*1. انقر على النقاط الثلاث في الزاوية اليمنى العليا*\n*2. اضغط على واتساب ويب*\n*3. قم بمسح رمز الاستجابة السريعة هذا*\n*تنتهي صلاحية رمز الاستجابة السريعة هذا خلال 45 ثانية!*\n\n> *⚠️ نحن غير مسؤولين عن أي سوء استخدام قد يعطى له أو في حال إرسال الرقم للدعم...عليك واجب الالتزام بالشروط والأحكام والخصوصية حرفيا (اكتب ذلك وسيتم إعطاؤه لك)*";
+let rtx2 = "🟢 *_Pairing_* 🟢\n\n*1️⃣ توجه إلى النقاط الثلاث في الزاوية اليمنى العليا*\n*2️⃣ انتقل إلى خيار الأجهزة المرتبطة*\n*3️⃣ انقر على الرابط مع رمز الهاتف*\n*4️⃣ الصق الكود أدناه*\n\n> *⚠️ نحن غير مسؤولين عن أي سوء استخدام قد يعطى له أو في حال إرسال الرقم للدعم...عليك واجب اتباع الشروط والأحكام والخصوصية (يرجى اعادة توجيه الرسالة القادمية الي).*";
 if (global.conns instanceof Array) {
   console.log();
 } else {
@@ -124,12 +138,12 @@ let handler = async (_0x5dc7f8, {
         msgRetryCache: _0x3ac438,
         version: [2, 3000, 1015901307],
         syncFullHistory: true,
-        browser: _0x2b7f1c ? ["Ubuntu", "Chrome", "110.0.5585.95"] : ["LoliBot-MD (SubBot)", "Chrome", "2.0.0"],
+        browser: _0x2b7f1c ? ["Ubuntu", "Chrome", "110.0.5585.95"] : ["Edgar-MD (SubBot)", "Chrome", "2.0.0"],
         defaultQueryTimeoutMs: undefined,
         getMessage: async _0x330330 => {
           if (store) {}
           return {
-            conversation: "LoliBot-MD"
+            conversation: "Edgar-MD"
           };
         }
       };
@@ -190,7 +204,7 @@ let handler = async (_0x5dc7f8, {
                   });
                 }
               } catch (_0x35d3db) {
-                console.error("Error al borrar el mensaje del código:", _0x35d3db);
+                console.error("Error:", _0x35d3db);
               }
             }, 30000);
             setTimeout(async () => {
@@ -201,11 +215,11 @@ let handler = async (_0x5dc7f8, {
                   });
                 }
               } catch (_0x4c54f2) {
-                console.error("Error al borrar el mensaje del código del bot:", _0x4c54f2);
+                console.error("خطا في الحصول على الكود:", _0x4c54f2);
               }
             }, 30000);
           } catch (_0xa6a504) {
-            console.error("Error en el flujo de QR con mcode:", _0xa6a504);
+            console.error("خطا في الحصول على الرمز:", _0xa6a504);
           }
         }
         const _0x55a77f = _0xa9c63b?.error?.output?.statusCode || _0xa9c63b?.error?.output?.payload?.statusCode;
@@ -215,7 +229,7 @@ let handler = async (_0x5dc7f8, {
             try {
               _0x2b89c6.ws.close();
             } catch (_0x3c69be) {
-              console.error("Error al cerrar la conexión WebSocket:", _0x3c69be);
+              console.error("error:", _0x3c69be);
             }
             _0x2b89c6.ev.removeAllListeners();
             let _0x30798e = global.conns.indexOf(_0x2b89c6);
@@ -231,27 +245,27 @@ let handler = async (_0x5dc7f8, {
           console.log(_0x469ed6);
           if (_0x469ed6 == 405) {
             await _0x42f252.unlinkSync("./jadibts/" + _0x3f1d2c + "/creds.json");
-            return await _0x5dc7f8.reply("*🟢 REENVIAR NUEVAMENTE EL COMANDO....*");
+            return await _0x5dc7f8.reply("*🟢 أعد إرسال الأمر مرة أخرى....*");
           }
           if (_0x469ed6 === DisconnectReason.restartRequired) {
             _0x55fb84();
-            return console.log("⚠️ CONEXIÓN REEMPLAZADA, SE HA ABIERTO OTRA NUEVA SESION, POR FAVOR, CIERRA LA SESIÓN ACTUAL PRIMERO");
+            return console.log("⚠️ تم استبدال الاتصال، وتم فتح جلسة جديدة أخرى، يرجى إغلاق الجلسة الحالية أولاً");
           } else if (_0x469ed6 === DisconnectReason.loggedOut) {
             sleep(4000);
-            return _0x5dc7f8.reply("🔴 *LA CONEXIÓN SE HA CERRADO, TENDRAS QUE VOLVER A CONECTARSE USANDO:*\n#deletesesion (Para borrar los datos y poder volver a solita el QR o el code)");
+            return _0x5dc7f8.reply("🔴 *تم إغلاق الاتصال، وسيتعين عليك إعادة الاتصال باستخدام:*\n#deletesesion (لحذف البيانات والتمكن من العودة إلى QR أو الرمز وحده)");
           } else if (_0x469ed6 == 428) {
             await _0x47328f(false);
-            return _0x5dc7f8.reply("🟡 *LA CONEXIÓN SE HA CERRADO DE MANERA INESPERADA, INTENTAREMOS RECONECTAR...*");
+            return _0x5dc7f8.reply("🟡 *تم إغلاق الاتصال بشكل غير متوقع، سنحاول إعادة الاتصال...*");
           } else if (_0x469ed6 === DisconnectReason.connectionLost) {
             await _0x55fb84();
             return console.log("⚠️ CONEXIÓN PERDIDA CON EL SERVIDOR, RECONECTANDO...");
           } else if (_0x469ed6 === DisconnectReason.badSession) {
-            return await _0x5dc7f8.reply("🔴 *LA CONEXIÓN SE HA CERRADO, DEBERÁ DE CONECTARSE MANUALMENTE USANDO EL COMANDO #serbot Y REESCANEAR EL NUEVO CÓDIGO QR*");
+            return await _0x5dc7f8.reply("🔴 *تم إغلاق الاتصال، يجب عليك الاتصال يدويًا باستخدام الأمر .serbot وإعادة مسح رمز الاستجابة السريعة الجديد*");
           } else if (_0x469ed6 === DisconnectReason.timedOut) {
             await _0x47328f(false);
-            return console.log("⌛ TIEMPO DE CONEXIÓN AGOTADO, RECONECTANDO...");
+            return console.log("⌛ انتهت مهلة الاتصال، جارٍ إعادة الاتصال....");
           } else {
-            console.log("⚠️❗ RAZON DE DESCONEXIÓN DESCONOCIDA: " + (_0x469ed6 || "") + " >> " + (_0x3d81f9 || ""));
+            console.log("⚠️❗ سبب قطع الاتصال غير معروف: " + (_0x469ed6 || "") + " >> " + (_0x3d81f9 || ""));
           }
         }
         if (global.db.data == null) {
@@ -261,19 +275,19 @@ let handler = async (_0x5dc7f8, {
           _0x2b89c6.isInit = true;
           global.conns.push(_0x2b89c6);
           await _0x4e1c2c.sendMessage(_0x5dc7f8.chat, {
-            text: _0x26550f[0] ? "*✅ Ya esta conectado!! Por favor espere se esta cargador los mensajes.....*" : "*Conectado exitosamente con WhatsApp ✅*\n\n*💻 Bot:* +" + _0x5dc7f8.sender.split`@`[0] + "\n*👤 Dueño:* " + (_0x5dc7f8.pushName || "Anónimo") + "\n\n*Nota: Esto es temporal*\nSi el Bot principal se reinicia o se desactiva, todos los sub bots tambien lo haran\n\n> *Unirte a nuestro canal para informarte de todas la Actualizaciónes/novedades sobre el bot*\n" + nna2
+            text: _0x26550f[0] ? "*✅ إنه متصل بالفعل!!  يرجى الانتظار إذا كان محمل الرسائل هذا!! .....*" : "*تم الاتصال بنجاح مع الواتساب ✅*\n\n*💻 Bot:* +" + _0x5dc7f8.sender.split`@`[0] + "\n*👤 Dueño:* " + (_0x5dc7f8.pushName || "Anónimo") + "\n\n*ملحوظة:هذا مؤقت*\nإذا تمت إعادة تشغيل البوت الرئيسي أو تعطيله، فسيتم إعادة تعيين جميع الروبوتات الفرعية أيضًا.\n\n> *انضم إلى قناتنا لمعرفة كل التحديثات/الأخبار حول الروبوت*\n" + nna2
           }, {
             quoted: _0x5dc7f8
           });
-          let _0x128aff = ("*Se detectó un nuevo Sub-Bot conectado 💻✨*\n\n*✨ Bot :* wa.me/" + _0x5dc7f8.sender.split`@`[0] + "\n*👤 Dueño :* " + (_0x5dc7f8.pushName || "Anónimo") + "\n*🔑 Método de conexión :* " + (_0x2b7f1c ? "Código de 8 dígitos" : "Código QR") + "\n*💻 Navegador :* " + (_0x2b7f1c ? "Ubuntu" : "Chrome") + "\n").trim();
+          let _0x128aff = ("* تم اكتشاف بوت جديد 💻✨*\n\n*✨ الرقم :* wa.me/" + _0x5dc7f8.sender.split`@`[0] + "\n*👤 المالك :* " + (_0x5dc7f8.pushName || "Ayoub-Dev") + "\n*🔑 طريقة التشغيل :* " + (_0x2b7f1c ? "الربط بالكود" : "المسح الرمز") + "\n*💻 المتصفح :* " + (_0x2b7f1c ? "Ubuntu" : "Chrome") + "\n").trim();
           let _0x3735ba = await _0x2b89c6.profilePictureUrl(_0x156f14, "image").catch(_0x35357a => imageUrl.getRandom());
           await sleep(3000);
           await _0x4e1c2c.sendMessage(ch.ch1, {
             text: _0x128aff,
             contextInfo: {
               externalAdReply: {
-                title: "【 📢 Notificación General 📢 】",
-                body: "🥳 ¡Nuevo Sub-Bot conectado!",
+                title: "【 📢 اشعار عام 📢 】",
+                body: "🥳 ¡تم اتصال بوت جديد!",
                 thumbnailUrl: _0x3735ba,
                 sourceUrl: [nna, nna2, nn, md, yt, tiktok].getRandom(),
                 mediaType: 1,
@@ -397,4 +411,6 @@ async function joinChannels(_0x1f0d83) {
   for (const _0x422adf of Object.values(global.ch)) {
     await _0x1f0d83.newsletterFollow(_0x422adf).catch(() => {});
   }
-}
+}{});
+  }
+  }
