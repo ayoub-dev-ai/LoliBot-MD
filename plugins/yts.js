@@ -1,24 +1,25 @@
-import yts from 'yt-search';
-import fs from 'fs';
+import yts from 'yt-search'
 
-const handler = async (m, {conn, text}) => {
-  if (!text) throw '⚠️ *_ماذا تريد البحث في اليوتيوب?_*';
-  const results = await yts(text);
-  const tes = results.all;
-  const teks = results.all.map((v) => {
+let handler = async (m, {conn, text }) => {
+  if (!text) throw 'اسم الفيديو ?'
+  await conn.reply(m.chat, global.wait, m)
+  let results = await yts(text)
+  let tes = results.all
+  let teks = results.all.map(v => {
     switch (v.type) {
       case 'video': return `
 ° *_${v.title}_*
-↳ ⚡ *_الرابط :_* ${v.url}
-↳ 💫 *_المدة :_* ${v.timestamp}
-↳ ߷ *_تاريخ التنزيل :_* ${v.ago}
-↳ Ⱅ *_المشاهدات :_* ${v.views}`;
-    }
-  }).filter((v) => v).join('\n\n◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦\n\n');
-  conn.sendFile(m.chat, tes[0].thumbnail, 'yts.jpeg', teks, m, rcanal);
-};
-handler.help = ['ytsearch *<عنوان>*'];
-handler.tags = ['search'];
-handler.command = ['ytsearch', 'yts'];
-handler.group = true;
-export default handler;
+↳ 🫐 *_Link :_* ${v.url}
+↳ 🕒 *_Duration :_* ${v.timestamp}
+↳ 📥 *_Uploaded :_* ${v.ago}
+↳ 👁 *_Views :_* ${v.views}`}}).filter(v => v).join('\n\n◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦\n\n')
+  conn.sendFile(m.chat, tes[0].thumbnail, 'yts.jpeg', teks, m)
+}
+
+handler.help = ['yts <الفيديو>']
+handler.tags = ['tools']
+handler.command = /^yts(earch)?$/i
+
+handler.register = false
+
+export default handler
