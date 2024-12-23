@@ -1,87 +1,51 @@
-import axios from 'axios'
-import fs from 'fs'
-import os from 'os'
-import { exec } from 'child_process'
-
-let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `طريقة: ${usedPrefix}${command} الرابط الجودة`;
-
-  m.reply(wait);
-  const args = text.split(' ');
-  const videoUrl = args[0];
-  const resolution = args[1] || '480';
-
-  const apiUrl = `${APIs.ryzen}/api/downloader/ytmp4?url=${encodeURIComponent(videoUrl)}&reso=${resolution}`;
-
+let handler = async (_0x17454b, {
+  conn: _0x5e7847,
+  text: _0x1077dd
+}) => {
+  if (!_0x1077dd) {
+    return _0x17454b.reply("Please enter a URL.\nمثال:\n\n .ytv https://youtube.com/watch?v=yCrmHCwo--c");
+  }
+  if (!_0x1077dd.includes("yout")) {
+    return _0x17454b.reply(global.mess.linkinv);
+  }
+  const {
+    key: _0xc092f8
+  } = await _0x5e7847.sendMessage(_0x17454b.chat, {
+    text: "```انتظر لحظة!!...\nإن لم يتم ارسال الفيديو, قد يكون حجمه كبير.```"
+  }, {
+    quoted: _0x17454b
+  });
   try {
-    const response = await axios.get(apiUrl);
-    const { url: videoStreamUrl, filename, lengthSeconds, title, uploadDate, views, author } = response.data;
-
-    if (!videoStreamUrl) throw 'Video URL not found in API response.';
-
-    const tmpDir = os.tmpdir();
-    const filePath = `${tmpDir}/${filename}`;
-
-    const writer = fs.createWriteStream(filePath);
-    const downloadResponse = await axios({
-      url: videoStreamUrl,
-      method: 'GET',
-      responseType: 'stream',
+    const _0x385ddf = await fetchJson("https://ai.xterm.codes/api/downloader/youtube?url=" + _0x1077dd + "&type=mp4");
+    const _0x4ca546 = {
+      text: "```جاري الأرسال...```",
+      edit: _0xc092f8
+    };
+    await _0x5e7847.sendMessage(_0x17454b.chat, _0x4ca546);
+    const _0x35a424 = {
+      url: _0x385ddf.data.dlink
+    };
+    const _0x2b5844 = {
+      video: _0x35a424
+    };
+    await _0x5e7847.sendMessage(_0x17454b.chat, _0x2b5844, {
+      quoted: _0x17454b
     });
-
-    downloadResponse.data.pipe(writer);
-
-    await new Promise((resolve, reject) => {
-      writer.on('finish', resolve);
-      writer.on('error', reject);
-    });
-
-    // Fix the video duration using ffmpeg
-    const outputFilePath = `${tmpDir}/${filename.replace('.mp4', '_fixed.mp4')}`;
-    await new Promise((resolve, reject) => {
-      exec(`ffmpeg -i "${filePath}" -c copy "${outputFilePath}"`, (error) => {
-        if (error) reject(error);
-        else resolve();
-      });
-    });
-
-    const caption = `فيديو من طلب @${m.sender.split('@')[0]}\n\n*Title*: ${title} (${resolution})\n*Author*: ${author}\n*Duration*: ${lengthSeconds}\n*Views*: ${views}\n*Uploaded*: ${uploadDate}`;
-
-    // Send the fixed video
-    await conn.sendMessage(m.chat, {
-      video: { url: outputFilePath },
-      mimetype: 'video/mp4',
-      fileName: filename,
-      caption,
-      mentions: [m.sender],
-    }, { quoted: m });
-
-    // Clean up temporary files
-    fs.unlink(filePath, (err) => {
-      if (err) {
-        console.error(`Failed to delete original video file: ${err}`);
-      } else {
-        console.log(`Deleted original video file: ${filePath}`);
-      }
-    });
-
-    fs.unlink(outputFilePath, (err) => {
-      if (err) {
-        console.error(`Failed to delete fixed video file: ${err}`);
-      } else {
-        console.log(`Deleted fixed video file: ${outputFilePath}`);
-      }
-    });
-
-  } catch (error) {
-    console.error(`Error: ${error.message}`);
-    throw `Failed to process request: ${error.message || error}`;
+    const _0x5a8366 = "```تم التنزيل```";
+    const _0xfa573a = {
+      text: _0x5a8366,
+      edit: _0xc092f8
+    };
+    await _0x5e7847.sendMessage(_0x17454b.chat, _0xfa573a);
+  } catch (_0x4af65d) {
+    console.error(_0x4af65d.message);
+    const _0x298f55 = {
+      text: " خطا.\nTry a different quality.",
+      edit: _0xc092f8
+    };
+    await _0x5e7847.sendMessage(_0x17454b.chat, _0x298f55);
   }
 };
-
-handler.help = ['ytmp4'];
-handler.tags = ['downloader'];
-handler.command = /^(ytmp4)$/i;
-handler.disable = false
-
-export default handler
+handler.help = handler.command = ["ytmp4", "ytv"];
+handler.tags = ["downloader"];
+export default handler;
