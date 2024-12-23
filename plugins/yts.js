@@ -9,10 +9,10 @@ let handler = async (m, {conn, text }) => {
     switch (v.type) {
       case 'video': return `
 ° *_${v.title}_*
-↳ 🫐 *_Link :_* ${v.url}
-↳ 🕒 *_Duration :_* ${v.timestamp}
-↳ 📥 *_Uploaded :_* ${v.ago}
-↳ 👁 *_Views :_* ${v.views}`}}).filter(v => v).join('\n\n◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦\n\n')
+↳ 🫐 *_الرابط :_* ${v.url}
+↳ 🕒 *_المدة  :_* ${v.timestamp}
+↳ 📥 *_بتاريخ :_* ${v.ago}
+↳ 👁 *_المشاهدات :_* ${v.views}`}}).filter(v => v).join('\n\n◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦\n\n')
   conn.sendFile(m.chat, tes[0].thumbnail, 'yts.jpeg', teks, m)
 }
 
