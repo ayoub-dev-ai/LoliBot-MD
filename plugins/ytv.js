@@ -1,29 +1,35 @@
-let limit = 30
-let fetch = require('node-fetch')
-const { servers, ytv } = require('../lib/y2mate')
+// BY JTXS
+// Creado : 21/11/24
 
-let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) => {
-    if (!args || !args[0]) throw 'uhm... urlnya mana?'
-    let chat = global.db.data.chats[m.chat]
-    let server = (args[1] || servers[0]).toLowerCase()
-    let { dl_link, thumb, title, filesize, filesizeF } = await ytv(args[0], servers.includes(server) ? server : servers[0])
-    let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
-    m.reply(isLimit ? `ukuran file: ${filesizeF}\nukuran file diatas ${limit} MB, download sendiri: ${dl_link}` : global.wait)
-    let _thumb = {}
-    try { _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
-    catch (e) { }
-    if (!isLimit) conn.sendFile(m.chat, dl_link, '', `
-*judul:* ${title}
-*ukuran file:* ${filesizeF}
-  `.trim(), m, 0, {
-        ..._thumb,
-        asDocument: chat.useDocument
-    })
-}
-handler.help = ['mp4', 'v', ''].map(v => 'yt' + v + ` <url>`)
-handler.tags = ['download']
-handler.command = /^yt(v|mp4)?$/i
+/* 
+[ Canal Principal ] :
+https://whatsapp.com/channel/0029VaeQcFXEFeXtNMHk0D0n
 
-handler.limit = 1
+[ Canal Rikka Takanashi Bot ] :
+https://whatsapp.com/channel/0029VaksDf4I1rcsIO6Rip2X
 
-module.exports = handler
+[ HasumiBot FreeCodes ] :
+https://whatsapp.com/channel/0029Vanjyqb2f3ERifCpGT0W
+*/
+
+import fetch from "node-fetch"
+
+let handler = async (m, { text, conn, args, usedPrefix, command }) => {
+if (!args[0]) return m.reply("ingresa un link de youtube")
+
+try {
+let api = await fetch(`https://api.agatz.xyz/api/ytmp4?url=${args[0]}`)
+let json = await api.json()
+let { title, thumbnail, quality, downloadUrl:dl_url } = json.data
+
+let JT = `*Titulo :* ${title}
+*Calidad :* ${quality}`
+
+await conn.sendFile(m.chat, dl_url, 'HasumiBotFreeCodes.mp4', JT, m)
+} catch (error) {
+console.error(error)
+}}
+
+handler.command = ['ytmp4']
+
+export default handler
