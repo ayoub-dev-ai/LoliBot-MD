@@ -1,31 +1,13 @@
-// BY JTXS
-// Creado : 21/11/24
+import fetch from 'node-fetch'
 
-/* 
-[ Canal Principal ] :
-https://whatsapp.com/channel/0029VaeQcFXEFeXtNMHk0D0n
-
-[ Canal Rikka Takanashi Bot ] :
-https://whatsapp.com/channel/0029VaksDf4I1rcsIO6Rip2X
-
-[ HasumiBot FreeCodes ] :
-https://whatsapp.com/channel/0029Vanjyqb2f3ERifCpGT0W
-*/
-
-import fetch from "node-fetch"
-
-let handler = async (m, { text, conn, args, usedPrefix, command }) => {
-if (!args[0]) return m.reply("ingresa un link de youtube")
-
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+if (!text) return conn.reply(m.chat, `❀ Ingresa un  link de youtube`, m, yt)
+    
 try {
-let api = await fetch(`https://api.agatz.xyz/api/ytmp4?url=${args[0]}`)
-let json = await api.json()
-let { title, thumbnail, quality, downloadUrl:dl_url } = json.data
+let api = await (await fetch(`https://api.siputzx.my.id/api/d/ytmp4?url=${text}`)).json()
+let dl_url = api.data.dl
 
-let JT = `*Titulo :* ${title}
-*Calidad :* ${quality}`
-
-await conn.sendFile(m.chat, dl_url, 'HasumiBotFreeCodes.mp4', JT, m)
+await conn.sendMessage(m.chat, { video: { url: dl_url }, caption: null }, { quoted: m })
 } catch (error) {
 console.error(error)
 }}
